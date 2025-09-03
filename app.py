@@ -127,6 +127,10 @@ class UltimateWorkoutDatabase:
         if not original_exercise:
             return None
         
+        # If substitution_exercise_id is the same as original, return original (reset case)
+        if substitution_exercise_id == original_exercise_id:
+            return original_exercise
+        
         # Look for the substitution in the original exercise's substitutions
         for sub in original_exercise.get('substitutions', []):
             if isinstance(sub, dict) and sub.get('id') == substitution_exercise_id:
@@ -942,6 +946,7 @@ HTML_TEMPLATE = r'''
             gap: 0.5rem;
             flex: 1;
             align-items: center;
+            max-width: 300px;
         }
         
         .set-inputs input {
@@ -1135,6 +1140,17 @@ HTML_TEMPLATE = r'''
             transform: translateX(4px);
         }
         
+        .substitution-item.selected {
+            background: #e6fffa;
+            border-color: #38b2ac;
+            box-shadow: 0 0 0 3px rgba(56, 178, 172, 0.1);
+        }
+        
+        .substitution-item.selected:hover {
+            background: #b2f5ea;
+            border-color: #319795;
+        }
+        
         .substitution-name {
             font-weight: 600;
             color: #2d3748;
@@ -1280,8 +1296,8 @@ HTML_TEMPLATE = r'''
         
         .set-row {
             display: grid;
-            grid-template-columns: auto 1fr 1fr auto;
-            gap: 0.75rem;
+            grid-template-columns: 60px 120px 120px 40px;
+            gap: 0.5rem;
             align-items: center;
             padding: 0.75rem;
             background: white;
@@ -1640,8 +1656,11 @@ HTML_TEMPLATE = r'''
             }
             
             .remove-link {
-                padding: 0.3rem 0.6rem;
-                font-size: 0.7rem;
+                padding: 0.2rem;
+                font-size: 1rem;
+                min-width: 25px;
+                max-width: 25px;
+                height: 25px;
                 white-space: nowrap;
             }
             
@@ -2150,13 +2169,17 @@ HTML_TEMPLATE = r'''
                 if (substitutions.length === 0) {
                     list.innerHTML = '<p style="text-align: center; color: #718096;">No substitutions available for this exercise.</p>';
                 } else {
+                    // Get current selection to highlight it
+                    const currentSubstitution = getStoredSubstitution(exerciseId);
+                    
                     // Add original exercise option first
                     const originalExercise = await getOriginalExercise(exerciseId);
                     let html = '';
                     
                     if (originalExercise) {
+                        const isCurrentlyOriginal = !currentSubstitution || currentSubstitution === originalExercise.id;
                         html += `
-                            <div class="substitution-item original-exercise" onclick="selectSubstitution('${exerciseId}', '${originalExercise.id}', true)">
+                            <div class="substitution-item original-exercise ${isCurrentlyOriginal ? 'selected' : ''}" onclick="selectSubstitution('${exerciseId}', '${originalExercise.id}', true)">
                                 <div class="substitution-name">
                                     <span class="original-badge">ORIGINAL</span>
                                     ${originalExercise.name}
@@ -2170,15 +2193,18 @@ HTML_TEMPLATE = r'''
                     }
                     
                     // Add substitution options
-                    html += substitutions.map(sub => `
-                        <div class="substitution-item" onclick="selectSubstitution('${exerciseId}', '${sub.id}')">
-                            <div class="substitution-name">${sub.name}</div>
-                            <div class="substitution-details">Muscle: ${sub.muscle}</div>
-                            <div class="substitution-equipment">
-                                <span class="equipment-tag">${sub.equipment_name}</span>
+                    html += substitutions.map(sub => {
+                        const isCurrentlySelected = currentSubstitution === sub.id;
+                        return `
+                            <div class="substitution-item ${isCurrentlySelected ? 'selected' : ''}" onclick="selectSubstitution('${exerciseId}', '${sub.id}')">
+                                <div class="substitution-name">${sub.name}</div>
+                                <div class="substitution-details">Muscle: ${sub.muscle}</div>
+                                <div class="substitution-equipment">
+                                    <span class="equipment-tag">${sub.equipment_name}</span>
+                                </div>
                             </div>
-                        </div>
-                    `).join('');
+                        `;
+                    }).join('');
                     
                     // Add reset button
                     html += `
