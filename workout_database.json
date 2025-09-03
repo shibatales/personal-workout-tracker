@@ -503,17 +503,17 @@
       "substitutions": [
         {
           "id": "SUB_EX007_1",
-          "name": "High-Cable Lateral Raise",
-          "muscle": "Shoulders",
+          "name": "Cable Rope Hammer Curl",
+          "muscle": "Biceps",
           "equipment": "Cable Machine",
           "body_part": "Upper"
         },
         {
           "id": "SUB_EX007_2",
-          "name": "Barbell Bench Press",
-          "muscle": "Chest",
-          "equipment": "Barbell",
-          "body_part": "Push"
+          "name": "EZ-Bar Cable Curl",
+          "muscle": "Biceps",
+          "equipment": "Cable Machine",
+          "body_part": "Upper"
         }
       ],
       "substitution_details": []
@@ -1962,17 +1962,17 @@
       "substitutions": [
         {
           "id": "SUB_EX041_1",
-          "name": "High-Cable Lateral Raise",
-          "muscle": "Shoulders",
+          "name": "Cable Rope Hammer Curl",
+          "muscle": "Biceps",
           "equipment": "Cable Machine",
           "body_part": "Upper"
         },
         {
           "id": "SUB_EX041_2",
-          "name": "Barbell Bench Press",
-          "muscle": "Chest",
-          "equipment": "Barbell",
-          "body_part": "Push"
+          "name": "EZ-Bar Cable Curl",
+          "muscle": "Biceps",
+          "equipment": "Cable Machine",
+          "body_part": "Upper"
         }
       ],
       "substitution_details": []
@@ -3421,17 +3421,17 @@
       "substitutions": [
         {
           "id": "SUB_EX075_1",
-          "name": "High-Cable Lateral Raise",
-          "muscle": "Shoulders",
+          "name": "Cable Rope Hammer Curl",
+          "muscle": "Biceps",
           "equipment": "Cable Machine",
           "body_part": "Upper"
         },
         {
           "id": "SUB_EX075_2",
-          "name": "Barbell Bench Press",
-          "muscle": "Chest",
-          "equipment": "Barbell",
-          "body_part": "Push"
+          "name": "EZ-Bar Cable Curl",
+          "muscle": "Biceps",
+          "equipment": "Cable Machine",
+          "body_part": "Upper"
         }
       ],
       "substitution_details": []
@@ -4880,17 +4880,17 @@
       "substitutions": [
         {
           "id": "SUB_EX109_1",
-          "name": "High-Cable Lateral Raise",
-          "muscle": "Shoulders",
+          "name": "Cable Rope Hammer Curl",
+          "muscle": "Biceps",
           "equipment": "Cable Machine",
           "body_part": "Upper"
         },
         {
           "id": "SUB_EX109_2",
-          "name": "Barbell Bench Press",
-          "muscle": "Chest",
-          "equipment": "Barbell",
-          "body_part": "Push"
+          "name": "EZ-Bar Cable Curl",
+          "muscle": "Biceps",
+          "equipment": "Cable Machine",
+          "body_part": "Upper"
         }
       ],
       "substitution_details": []
@@ -6344,17 +6344,17 @@
       "substitutions": [
         {
           "id": "SUB_EX143_1",
-          "name": "High-Cable Lateral Raise",
-          "muscle": "Shoulders",
+          "name": "Cable Rope Hammer Curl",
+          "muscle": "Biceps",
           "equipment": "Cable Machine",
           "body_part": "Upper"
         },
         {
           "id": "SUB_EX143_2",
-          "name": "Barbell Bench Press",
-          "muscle": "Chest",
-          "equipment": "Barbell",
-          "body_part": "Push"
+          "name": "EZ-Bar Cable Curl",
+          "muscle": "Biceps",
+          "equipment": "Cable Machine",
+          "body_part": "Upper"
         }
       ],
       "substitution_details": []
@@ -7776,17 +7776,17 @@
       "substitutions": [
         {
           "id": "SUB_EX177_1",
-          "name": "High-Cable Lateral Raise",
-          "muscle": "Shoulders",
+          "name": "Cable Rope Hammer Curl",
+          "muscle": "Biceps",
           "equipment": "Cable Machine",
           "body_part": "Upper"
         },
         {
           "id": "SUB_EX177_2",
-          "name": "Barbell Bench Press",
-          "muscle": "Chest",
-          "equipment": "Barbell",
-          "body_part": "Push"
+          "name": "EZ-Bar Cable Curl",
+          "muscle": "Biceps",
+          "equipment": "Cable Machine",
+          "body_part": "Upper"
         }
       ],
       "substitution_details": []
@@ -7839,8 +7839,8 @@
       "body_part_id": 2,
       "training_focus": "Strength Focus",
       "training_focus_id": 1,
-      "muscle": "Unknown",
-      "muscle_id": 1,
+      "muscle": "Quadriceps",
+      "muscle_id": 5,
       "equipment": "Smith Machine",
       "equipment_id": 1,
       "reps": "8-10",
@@ -7854,14 +7854,14 @@
         {
           "id": "SUB_EX179_1",
           "name": "DB Bulgarian Split Squat",
-          "muscle": "Unknown",
+          "muscle": "Quadriceps",
           "equipment": "Dumbbell",
           "body_part": "Lower"
         },
         {
           "id": "SUB_EX179_2",
           "name": "High-Bar Back Squat",
-          "muscle": "Unknown",
+          "muscle": "Quadriceps",
           "equipment": "Various",
           "body_part": "Lower"
         }
@@ -9141,17 +9141,17 @@
       "substitutions": [
         {
           "id": "SUB_EX211_1",
-          "name": "High-Cable Lateral Raise",
-          "muscle": "Shoulders",
+          "name": "Cable Rope Hammer Curl",
+          "muscle": "Biceps",
           "equipment": "Cable Machine",
           "body_part": "Upper"
         },
         {
           "id": "SUB_EX211_2",
-          "name": "Barbell Bench Press",
-          "muscle": "Chest",
-          "equipment": "Barbell",
-          "body_part": "Push"
+          "name": "EZ-Bar Cable Curl",
+          "muscle": "Biceps",
+          "equipment": "Cable Machine",
+          "body_part": "Upper"
         }
       ],
       "substitution_details": []
@@ -9204,8 +9204,8 @@
       "body_part_id": 2,
       "training_focus": "Strength Focus",
       "training_focus_id": 1,
-      "muscle": "Unknown",
-      "muscle_id": 1,
+      "muscle": "Quadriceps",
+      "muscle_id": 5,
       "equipment": "Smith Machine",
       "equipment_id": 1,
       "reps": "8-10",
@@ -9219,14 +9219,14 @@
         {
           "id": "SUB_EX213_1",
           "name": "DB Bulgarian Split Squat",
-          "muscle": "Unknown",
+          "muscle": "Quadriceps",
           "equipment": "Dumbbell",
           "body_part": "Lower"
         },
         {
           "id": "SUB_EX213_2",
           "name": "High-Bar Back Squat",
-          "muscle": "Unknown",
+          "muscle": "Quadriceps",
           "equipment": "Various",
           "body_part": "Lower"
         }
@@ -10506,17 +10506,17 @@
       "substitutions": [
         {
           "id": "SUB_EX245_1",
-          "name": "High-Cable Lateral Raise",
-          "muscle": "Shoulders",
+          "name": "Cable Rope Hammer Curl",
+          "muscle": "Biceps",
           "equipment": "Cable Machine",
           "body_part": "Upper"
         },
         {
           "id": "SUB_EX245_2",
-          "name": "Barbell Bench Press",
-          "muscle": "Chest",
-          "equipment": "Barbell",
-          "body_part": "Push"
+          "name": "EZ-Bar Cable Curl",
+          "muscle": "Biceps",
+          "equipment": "Cable Machine",
+          "body_part": "Upper"
         }
       ],
       "substitution_details": []
@@ -10569,8 +10569,8 @@
       "body_part_id": 2,
       "training_focus": "Strength Focus",
       "training_focus_id": 1,
-      "muscle": "Unknown",
-      "muscle_id": 1,
+      "muscle": "Quadriceps",
+      "muscle_id": 5,
       "equipment": "Smith Machine",
       "equipment_id": 1,
       "reps": "8-10",
@@ -10584,14 +10584,14 @@
         {
           "id": "SUB_EX247_1",
           "name": "DB Bulgarian Split Squat",
-          "muscle": "Unknown",
+          "muscle": "Quadriceps",
           "equipment": "Dumbbell",
           "body_part": "Lower"
         },
         {
           "id": "SUB_EX247_2",
           "name": "High-Bar Back Squat",
-          "muscle": "Unknown",
+          "muscle": "Quadriceps",
           "equipment": "Various",
           "body_part": "Lower"
         }
@@ -11871,17 +11871,17 @@
       "substitutions": [
         {
           "id": "SUB_EX279_1",
-          "name": "High-Cable Lateral Raise",
-          "muscle": "Shoulders",
+          "name": "Cable Rope Hammer Curl",
+          "muscle": "Biceps",
           "equipment": "Cable Machine",
           "body_part": "Upper"
         },
         {
           "id": "SUB_EX279_2",
-          "name": "Barbell Bench Press",
-          "muscle": "Chest",
-          "equipment": "Barbell",
-          "body_part": "Push"
+          "name": "EZ-Bar Cable Curl",
+          "muscle": "Biceps",
+          "equipment": "Cable Machine",
+          "body_part": "Upper"
         }
       ],
       "substitution_details": []
@@ -11934,8 +11934,8 @@
       "body_part_id": 2,
       "training_focus": "Strength Focus",
       "training_focus_id": 1,
-      "muscle": "Unknown",
-      "muscle_id": 1,
+      "muscle": "Quadriceps",
+      "muscle_id": 5,
       "equipment": "Smith Machine",
       "equipment_id": 1,
       "reps": "8-10",
@@ -11949,14 +11949,14 @@
         {
           "id": "SUB_EX281_1",
           "name": "DB Bulgarian Split Squat",
-          "muscle": "Unknown",
+          "muscle": "Quadriceps",
           "equipment": "Dumbbell",
           "body_part": "Lower"
         },
         {
           "id": "SUB_EX281_2",
           "name": "High-Bar Back Squat",
-          "muscle": "Unknown",
+          "muscle": "Quadriceps",
           "equipment": "Various",
           "body_part": "Lower"
         }
@@ -13241,17 +13241,17 @@
       "substitutions": [
         {
           "id": "SUB_EX313_1",
-          "name": "High-Cable Lateral Raise",
-          "muscle": "Shoulders",
+          "name": "Cable Rope Hammer Curl",
+          "muscle": "Biceps",
           "equipment": "Cable Machine",
           "body_part": "Upper"
         },
         {
           "id": "SUB_EX313_2",
-          "name": "Barbell Bench Press",
-          "muscle": "Chest",
-          "equipment": "Barbell",
-          "body_part": "Push"
+          "name": "EZ-Bar Cable Curl",
+          "muscle": "Biceps",
+          "equipment": "Cable Machine",
+          "body_part": "Upper"
         }
       ],
       "substitution_details": []
@@ -13304,8 +13304,8 @@
       "body_part_id": 2,
       "training_focus": "Strength Focus",
       "training_focus_id": 1,
-      "muscle": "Unknown",
-      "muscle_id": 1,
+      "muscle": "Quadriceps",
+      "muscle_id": 5,
       "equipment": "Smith Machine",
       "equipment_id": 1,
       "reps": "8-10",
@@ -13319,14 +13319,14 @@
         {
           "id": "SUB_EX315_1",
           "name": "DB Bulgarian Split Squat",
-          "muscle": "Unknown",
+          "muscle": "Quadriceps",
           "equipment": "Dumbbell",
           "body_part": "Lower"
         },
         {
           "id": "SUB_EX315_2",
           "name": "High-Bar Back Squat",
-          "muscle": "Unknown",
+          "muscle": "Quadriceps",
           "equipment": "Various",
           "body_part": "Lower"
         }
@@ -14611,17 +14611,17 @@
       "substitutions": [
         {
           "id": "SUB_EX347_1",
-          "name": "High-Cable Lateral Raise",
-          "muscle": "Shoulders",
+          "name": "Cable Rope Hammer Curl",
+          "muscle": "Biceps",
           "equipment": "Cable Machine",
           "body_part": "Upper"
         },
         {
           "id": "SUB_EX347_2",
-          "name": "Barbell Bench Press",
-          "muscle": "Chest",
-          "equipment": "Barbell",
-          "body_part": "Push"
+          "name": "EZ-Bar Cable Curl",
+          "muscle": "Biceps",
+          "equipment": "Cable Machine",
+          "body_part": "Upper"
         }
       ],
       "substitution_details": []
@@ -14674,8 +14674,8 @@
       "body_part_id": 2,
       "training_focus": "Strength Focus",
       "training_focus_id": 1,
-      "muscle": "Unknown",
-      "muscle_id": 1,
+      "muscle": "Quadriceps",
+      "muscle_id": 5,
       "equipment": "Smith Machine",
       "equipment_id": 1,
       "reps": "8-10",
@@ -14689,14 +14689,14 @@
         {
           "id": "SUB_EX349_1",
           "name": "DB Bulgarian Split Squat",
-          "muscle": "Unknown",
+          "muscle": "Quadriceps",
           "equipment": "Dumbbell",
           "body_part": "Lower"
         },
         {
           "id": "SUB_EX349_2",
           "name": "High-Bar Back Squat",
-          "muscle": "Unknown",
+          "muscle": "Quadriceps",
           "equipment": "Various",
           "body_part": "Lower"
         }
@@ -15970,29 +15970,15 @@
       "substitutions": [
         {
           "id": "SUB_EX381_1",
-          "name": "Barbell Bench Press",
-          "muscle": "Chest",
-          "equipment": "Barbell",
-          "body_part": "Push"
-        },
-        {
-          "id": "SUB_EX381_2",
-          "name": "High-Cable Lateral Raise",
-          "muscle": "Shoulders",
+          "name": "Cable Rope Hammer Curl",
+          "muscle": "Biceps",
           "equipment": "Cable Machine",
           "body_part": "Upper"
         },
         {
-          "id": "SUB_EX381_3",
-          "name": "Pendlay Row",
-          "muscle": "Back",
-          "equipment": "Barbell",
-          "body_part": "Upper"
-        },
-        {
-          "id": "SUB_EX381_4",
-          "name": "Overhead Cable Triceps Extension (Bar)",
-          "muscle": "Triceps",
+          "id": "SUB_EX381_2",
+          "name": "EZ-Bar Cable Curl",
+          "muscle": "Biceps",
           "equipment": "Cable Machine",
           "body_part": "Upper"
         }
@@ -16047,8 +16033,8 @@
       "body_part_id": 2,
       "training_focus": "Strength Focus",
       "training_focus_id": 1,
-      "muscle": "Unknown",
-      "muscle_id": 1,
+      "muscle": "Quadriceps",
+      "muscle_id": 5,
       "equipment": "Smith Machine",
       "equipment_id": 1,
       "reps": "8-10",
@@ -16062,14 +16048,14 @@
         {
           "id": "SUB_EX383_1",
           "name": "DB Bulgarian Split Squat",
-          "muscle": "Unknown",
+          "muscle": "Quadriceps",
           "equipment": "Dumbbell",
           "body_part": "Lower"
         },
         {
           "id": "SUB_EX383_2",
           "name": "High-Bar Back Squat",
-          "muscle": "Unknown",
+          "muscle": "Quadriceps",
           "equipment": "Various",
           "body_part": "Lower"
         }
