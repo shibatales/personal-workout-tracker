@@ -758,7 +758,7 @@ HTML_TEMPLATE = r'''
             font-size: 1.25rem;
             font-weight: 600;
             color: #2d3748;
-            margin: 0;
+            margin: 0 0 .5rem 0;
             flex: 1;
             min-width: 200px;
         }
@@ -793,7 +793,7 @@ HTML_TEMPLATE = r'''
             display: flex;
             gap: 0.75rem;
             flex-wrap: wrap;
-            margin: 1rem 0;
+            margin: 0 0 1rem;
         }
         
         .original-badge {
@@ -1791,6 +1791,27 @@ HTML_TEMPLATE = r'''
                 font-size: 0.8rem;
                 padding: 0;
             }
+        }
+        
+        /* Completion checkbox styles */
+        .completion-checkbox-container {
+            margin-top: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .completion-checkbox {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+        
+        .completion-label {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #4a5568;
+            cursor: pointer;
         }
         
         /* CRITICAL: Exercise card collapse functionality with maximum specificity */
