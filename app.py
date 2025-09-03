@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Ultimate Jeff Nippard Workout Tracker with Improved Equipment Categorization
+🏋️‍♂️ Shiba Tales Workout Tracker with Improved Equipment Categorization
 - Uses specific equipment types (Barbell, Dumbbell, etc.) instead of vague "Free Weight"
 - Enhanced substitution system with equipment category intelligence
 - Advanced filtering by equipment category, mobility, and resistance type
@@ -548,7 +548,7 @@ HTML_TEMPLATE = r'''
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ultimate Jeff Nippard Workout Tracker</title>
+    <title>🏋️‍♂️ Shiba Tales Workout Tracker</title>
     <style>
         * {
             margin: 0;
@@ -1296,13 +1296,15 @@ HTML_TEMPLATE = r'''
         
         .set-row {
             display: grid;
-            grid-template-columns: 60px 120px 120px 50px;
-            gap: 0.5rem;
+            grid-template-columns: 60px 110px 110px 45px;
+            gap: 0.4rem;
             align-items: center;
             padding: 0.75rem;
             background: white;
             border-radius: 4px;
             border: 1px solid #e2e8f0;
+            max-width: 100%;
+            overflow: hidden;
         }
         
         .set-number {
@@ -1341,18 +1343,20 @@ HTML_TEMPLATE = r'''
         .remove-link {
             color: #e53e3e;
             text-decoration: none;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: 500;
-            padding: 0.5rem;
+            padding: 0.4rem;
             border-radius: 4px;
             transition: all 0.2s ease;
             display: flex;
             align-items: center;
             justify-content: center;
-            min-width: 40px;
-            height: 40px;
+            min-width: 35px;
+            max-width: 35px;
+            height: 35px;
             background: #fed7d7;
             border: 1px solid #feb2b2;
+            box-sizing: border-box;
         }
         
         .remove-link:hover {
@@ -1643,9 +1647,11 @@ HTML_TEMPLATE = r'''
             }
             
             .set-row {
-                grid-template-columns: 50px 80px 80px 40px;
-                gap: 0.25rem;
+                grid-template-columns: 45px 75px 75px 35px;
+                gap: 0.2rem;
                 padding: 0.4rem;
+                max-width: 100%;
+                overflow: hidden;
             }
             
             .set-inputs {
@@ -1667,11 +1673,11 @@ HTML_TEMPLATE = r'''
             }
             
             .remove-link {
-                padding: 0.3rem;
-                font-size: 1rem;
-                min-width: 32px;
-                max-width: 32px;
-                height: 32px;
+                padding: 0.25rem;
+                font-size: 0.9rem;
+                min-width: 30px;
+                max-width: 30px;
+                height: 30px;
                 white-space: nowrap;
             }
             
@@ -1697,7 +1703,7 @@ HTML_TEMPLATE = r'''
     <div class="header">
         <div class="header-content">
             <div class="logo">
-                🏋️‍♂️ Ultimate Jeff Nippard Workout Tracker
+                🏋️‍♂️ Shiba Tales Workout Tracker
             </div>
             <nav class="nav">
                 <a href="#" class="nav-btn active" onclick="showPage('workout')">Workout</a>
@@ -2429,6 +2435,9 @@ HTML_TEMPLATE = r'''
             const targetWeight = parseFloat(document.getElementById(`target-weight-${exerciseId}`).value);
             if (!targetWeight) return;
             
+            // Round target weight to nearest 5
+            const roundedTargetWeight = Math.round(targetWeight / 5) * 5;
+            
             const warmupSets = [
                 { percentage: 40, reps: 8 },
                 { percentage: 60, reps: 5 },
@@ -2437,7 +2446,7 @@ HTML_TEMPLATE = r'''
             
             let html = '<div class="warmup-results">';
             warmupSets.forEach((set, index) => {
-                const weight = Math.round(targetWeight * (set.percentage / 100) * 2) / 2; // Round to nearest 2.5
+                const weight = Math.round((roundedTargetWeight * (set.percentage / 100)) / 5) * 5; // Round to nearest 5
                 html += `
                     <div class="warmup-set">
                         <span>Warmup Set ${index + 1}:</span>
@@ -2452,8 +2461,8 @@ HTML_TEMPLATE = r'''
                 <div class="working-set-suggestion">
                     <div class="suggestion-title">Suggested Working Set:</div>
                     <div class="suggestion-details">
-                        <span>${targetWeight} lbs × target reps</span>
-                        <button class="btn btn-log-working" onclick="logWorkingSet('${exerciseId}', ${targetWeight})">Log Working Set</button>
+                        <span>${roundedTargetWeight} lbs × target reps</span>
+                        <button class="btn btn-log-working" onclick="logWorkingSet('${exerciseId}', ${roundedTargetWeight})">Log Working Set</button>
                     </div>
                 </div>
             `;
