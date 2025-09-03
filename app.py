@@ -1296,8 +1296,8 @@ HTML_TEMPLATE = r'''
         
         .set-row {
             display: grid;
-            grid-template-columns: 60px 140px 140px 50px;
-            gap: 0.75rem;
+            grid-template-columns: 60px 120px 120px 50px;
+            gap: 0.5rem;
             align-items: center;
             padding: 0.75rem;
             background: white;
@@ -1320,6 +1320,18 @@ HTML_TEMPLATE = r'''
             text-align: center;
         }
         
+        .set-inputs {
+            display: contents; /* Make inputs part of the parent grid */
+        }
+        
+        .set-inputs input {
+            padding: 0.5rem;
+            border: 1px solid #cbd5e0;
+            border-radius: 4px;
+            font-size: 16px; /* Prevent mobile zoom */
+            text-align: center;
+        }
+        
         .set-input:focus {
             outline: none;
             border-color: #4299e1;
@@ -1331,15 +1343,14 @@ HTML_TEMPLATE = r'''
             text-decoration: none;
             font-size: 1.2rem;
             font-weight: 500;
-            padding: 0.25rem 0.5rem;
+            padding: 0.5rem;
             border-radius: 4px;
             transition: all 0.2s ease;
             display: flex;
             align-items: center;
             justify-content: center;
-            min-width: 30px;
-            max-width: 30px;
-            height: 30px;
+            min-width: 40px;
+            height: 40px;
             background: #fed7d7;
             border: 1px solid #feb2b2;
         }
@@ -1632,8 +1643,8 @@ HTML_TEMPLATE = r'''
             }
             
             .set-row {
-                grid-template-columns: 50px 70px 70px 30px;
-                gap: 0.3rem;
+                grid-template-columns: 50px 80px 80px 40px;
+                gap: 0.25rem;
                 padding: 0.4rem;
             }
             
@@ -1656,11 +1667,11 @@ HTML_TEMPLATE = r'''
             }
             
             .remove-link {
-                padding: 0.2rem;
+                padding: 0.3rem;
                 font-size: 1rem;
-                min-width: 25px;
-                max-width: 25px;
-                height: 25px;
+                min-width: 32px;
+                max-width: 32px;
+                height: 32px;
                 white-space: nowrap;
             }
             
