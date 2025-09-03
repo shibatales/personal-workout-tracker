@@ -641,16 +641,16 @@ HTML_TEMPLATE = r'''
         .workout-controls {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
-            padding: 2rem;
-            border-radius: 16px;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
-            margin-bottom: 2rem;
+            padding: 1rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+            margin-bottom: 1rem;
         }
         
         .controls-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
+            gap: 1rem;
             align-items: end;
         }
         
@@ -669,7 +669,7 @@ HTML_TEMPLATE = r'''
         }
         
         .control-group select {
-            padding: 0.75rem 1rem;
+            padding: 0.5rem 0.75rem;
             border: 2px solid #e2e8f0;
             border-radius: 8px;
             background: white;
@@ -734,7 +734,7 @@ HTML_TEMPLATE = r'''
             background: white;
             border-radius: 12px;
             padding: 1rem;
-            margin-bottom: 2rem;
+            margin-bottom: 1rem;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             border: 1px solid #e2e8f0;
             transition: all 0.3s ease;
@@ -1764,8 +1764,8 @@ HTML_TEMPLATE = r'''
             }
             
             .exercise-header {
-                padding: 0.75rem !important;
-                min-height: 50px !important;
+                flex-direction: row;
+                align-items: center;
             }
             
             .exercise-title {
@@ -2245,7 +2245,7 @@ HTML_TEMPLATE = r'''
                             <div class="completion-status" id="completion-status-${exerciseId}"></div>
                             <div class="expand-icon">▼</div>
                         </div>
-                        <div class="exercise-content">
+                        <div class="exercise-content" style="display: none; visibility: hidden; height: 0px; overflow: hidden;">
                             <div class="exercise-actions">
                                 <button class="substitute-btn" onclick="showSubstitutions('${exerciseId}')">🔄 Substitute</button>
                                 <a href="${exercise.tutorial_url}" target="_blank" class="tutorial-btn">📺 Tutorial</a>
