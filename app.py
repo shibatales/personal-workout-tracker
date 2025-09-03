@@ -72,9 +72,11 @@ class UltimateWorkoutDatabase:
     
     def get_all_exercises(self):
         """Get all exercises"""
-        if isinstance(self.database['exercises'], dict):
+        if isinstance(self.database['exercises'], list):
+            return self.database['exercises']
+        elif isinstance(self.database['exercises'], dict):
             return list(self.database['exercises'].values())
-        return list(self.database['exercises'])
+        return []
     
     def get_exercises_for_workout(self, week, workout_type):
         """Get exercises for a specific week and workout type"""
@@ -306,6 +308,16 @@ def get_exercises():
         exercise['tags'] = generate_comprehensive_tags(exercise)
     
     return jsonify(exercises)
+
+@app.route('/api/exercises/<exercise_id>')
+@login_required
+def get_exercise_by_id(exercise_id):
+    """API endpoint to get a specific exercise by ID"""
+    exercise = db.get_exercise_by_id(exercise_id)
+    if exercise:
+        return jsonify(exercise)
+    else:
+        return jsonify({'error': 'Exercise not found'}), 404
 
 @app.route('/api/substitutions/<exercise_id>')
 @login_required
@@ -1268,7 +1280,7 @@ HTML_TEMPLATE = r'''
         
         .set-row {
             display: grid;
-            grid-template-columns: auto 1fr 1fr 1fr auto;
+            grid-template-columns: auto 1fr 1fr auto;
             gap: 0.75rem;
             align-items: center;
             padding: 0.75rem;
@@ -1301,17 +1313,27 @@ HTML_TEMPLATE = r'''
         .remove-link {
             color: #e53e3e;
             text-decoration: none;
-            font-size: 0.875rem;
+            font-size: 1.2rem;
             font-weight: 500;
-            padding: 0.5rem;
+            padding: 0.25rem 0.5rem;
             border-radius: 4px;
             transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 30px;
+            max-width: 30px;
+            height: 30px;
+            background: #fed7d7;
+            border: 1px solid #feb2b2;
         }
         
         .remove-link:hover {
             color: #c53030;
-            background: #fed7d7;
-            text-decoration: underline;
+            background: #fbb6ce;
+            border-color: #f687b3;
+            text-decoration: none;
+            transform: scale(1.05);
         }
         
         .btn-remove {
