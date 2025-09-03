@@ -852,6 +852,50 @@ HTML_TEMPLATE = r'''
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
         }
         
+        .substitute-btn {
+            background: linear-gradient(135deg, #ff7b54 0%, #ff6b35 100%);
+            color: white;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.875rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        
+        .substitute-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(255, 123, 84, 0.3);
+        }
+        
+        .tutorial-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.875rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        
+        .tutorial-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+        }
+        
         .btn-add-set {
             background: linear-gradient(135deg, #4299e1, #3182ce);
             color: white;
@@ -1691,7 +1735,7 @@ HTML_TEMPLATE = r'''
         }
         
         .exercise-card.collapsed .exercise-content {
-            display: none;
+            display: none !important;
         }
         
         .exercise-card.collapsed .exercise-header {
@@ -1757,7 +1801,7 @@ HTML_TEMPLATE = r'''
         
         .completion-checkbox-container {
             margin-top: 1rem;
-            padding-top: 1rem;
+            padding: 1rem;
             border-top: 2px solid #e2e8f0;
             display: flex;
             align-items: center;
@@ -1799,6 +1843,15 @@ HTML_TEMPLATE = r'''
                 🏋️‍♂️ Shiba Tales Workout Tracker
             </div>
             <nav class="nav">
+                <div id="online-status" style="
+                    background: rgba(0,0,0,0.8);
+                    color: white;
+                    padding: 8px 12px;
+                    border-radius: 20px;
+                    font-size: 12px;
+                    font-weight: bold;
+                    margin-right: 1rem;
+                ">🟢 Online</div>
                 <a href="#" class="nav-btn active" onclick="showPage('workout')">Workout</a>
                 <a href="#" class="nav-btn" onclick="showPage('database')">Exercise Database</a>
             </nav>
@@ -3240,22 +3293,8 @@ HTML_TEMPLATE = r'''
         }
 
         function createStatusIndicator() {
-            const indicator = document.createElement('div');
-            indicator.id = 'online-status';
-            indicator.style.cssText = `
-                position: fixed;
-                top: 10px;
-                left: 10px;
-                background: rgba(0,0,0,0.8);
-                color: white;
-                padding: 8px 12px;
-                border-radius: 20px;
-                font-size: 12px;
-                font-weight: bold;
-                z-index: 9999;
-            `;
-            document.body.appendChild(indicator);
-            return indicator;
+            // Return the existing status indicator in the header
+            return document.getElementById('online-status');
         }
 
         // Listen for online/offline events
