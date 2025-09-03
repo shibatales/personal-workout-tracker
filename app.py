@@ -1847,6 +1847,19 @@ HTML_TEMPLATE = r'''
                 }
                 
                 const exercises = await response.json();
+                
+                // Filter to get only unique exercises by name
+                const uniqueExercises = [];
+                const seenNames = new Set();
+                
+                exercises.forEach(exercise => {
+                    if (!seenNames.has(exercise.name)) {
+                        seenNames.add(exercise.name);
+                        uniqueExercises.push(exercise);
+                    }
+                });
+                
+                console.log(`📊 Exercise Database: Showing ${uniqueExercises.length} unique exercises (filtered from ${exercises.length} total)`);
             
             const databasePage = document.getElementById('database-page');
                 
@@ -1898,7 +1911,7 @@ HTML_TEMPLATE = r'''
                     <div id="exercise-results">
                 `;
                 
-                exercises.forEach((exercise, index) => {
+                uniqueExercises.forEach((exercise, index) => {
                     html += `
                         <div class="exercise-card exercise-db-item" data-name="${exercise.name.toLowerCase()}" data-equipment="${exercise.equipment}" data-muscle="${exercise.muscle}">
                             <div class="exercise-header">
