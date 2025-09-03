@@ -1681,7 +1681,100 @@ HTML_TEMPLATE = r'''
                 white-space: nowrap;
             }
             
-            /* Mobile Modal Improvements */
+            /* Expandable Exercise Cards */
+        .exercise-card {
+            transition: all 0.3s ease;
+            background: white;
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .exercise-card.collapsed .exercise-content {
+            display: none;
+        }
+        
+        .exercise-card.collapsed .exercise-header {
+            cursor: pointer;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 12px;
+            padding: 1rem;
+            margin-bottom: 0;
+        }
+        
+        .exercise-card.collapsed.completed .exercise-header {
+            background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+        }
+        
+        .exercise-card.collapsed .exercise-header:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+        }
+        
+        .exercise-card.collapsed.completed .exercise-header:hover {
+            box-shadow: 0 8px 25px rgba(72, 187, 120, 0.3);
+        }
+        
+        .exercise-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .exercise-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: white;
+            flex: 1;
+        }
+        
+        .completion-status {
+            font-size: 1.5rem;
+            margin-right: 0.5rem;
+        }
+        
+        .expand-icon {
+            font-size: 1.5rem;
+            color: white;
+            transition: transform 0.3s ease;
+        }
+        
+        .exercise-card:not(.collapsed) .expand-icon {
+            transform: rotate(180deg);
+        }
+        
+        .exercise-card:not(.collapsed) .exercise-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 12px 12px 0 0;
+            padding: 1rem;
+            margin-bottom: 0;
+        }
+        
+        .exercise-card:not(.collapsed) .exercise-content {
+            padding: 1rem;
+            border-radius: 0 0 12px 12px;
+        }
+        
+        .completion-checkbox-container {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 2px solid #e2e8f0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .completion-checkbox {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+        
+        .completion-label {
+            font-weight: 600;
+            color: #2d3748;
+            cursor: pointer;
+        }ments */
             .modal-content {
                 width: 95%;
                 max-height: 90vh;
@@ -2091,22 +2184,20 @@ HTML_TEMPLATE = r'''
                 const exerciseId = exercise.id || `ex_${index}`;
                 const workoutKey = `${week}-${workoutType}-${exerciseId}`;
                 const savedSets = workoutData[workoutKey]?.sets || [];
+                const exerciseIndex = index + 1;
                 
                 html += `
-                    <div class="exercise-container" id="exercise-${exerciseId}" data-exercise-id="${exerciseId}">
-                        <div class="exercise-header">
-                            <div>
-                                <h3 class="exercise-title">${index + 1}. ${exercise.name}</h3>
-                            </div>
-                            <div class="exercise-actions">
-                                <button class="btn btn-secondary" onclick="showSubstitutions('${exerciseId}', '${exercise.name}')">
-                                    🔄 Substitute
-                                </button>
-                                <a href="${exercise.tutorial_url || '#'}" target="_blank" class="btn btn-danger">
-                                    📺 Tutorial
-                                </a>
-                            </div>
+                    <div class="exercise-card collapsed" id="exercise-${exerciseId}" data-exercise-id="${exerciseId}">
+                        <div class="exercise-header" onclick="toggleExerciseCard('${exerciseId}')">
+                            <div class="exercise-title">${exerciseIndex}. ${exercise.name}</div>
+                            <div class="completion-status" id="completion-status-${exerciseId}"></div>
+                            <div class="expand-icon">▼</div>
                         </div>
+                        <div class="exercise-content">
+                            <div class="exercise-actions">
+                                <button class="substitute-btn" onclick="showSubstitutions('${exerciseId}')">🔄 Substitute</button>
+                                <a href="${exercise.tutorial_url}" target="_blank" class="tutorial-btn">📺 Tutorial</a>
+                            </div>
                         
                         <div class="exercise-stats">
                             <div class="stat-item">
@@ -2118,7 +2209,7 @@ HTML_TEMPLATE = r'''
                                 <div class="stat-value" id="equipment-${exerciseId}">${exercise.equipment}</div>
                             </div>
                             <div class="stat-item">
-                                <div class="stat-label">Body Part</div>
+                                <div class="stat-label">Lift Type</div>
                                 <div class="stat-value">${exercise.body_part}</div>
                             </div>
                             <div class="stat-item">
@@ -2168,6 +2259,13 @@ HTML_TEMPLATE = r'''
                                 <button id="stop-timer-${exerciseId}" class="btn btn-stop" onclick="stopRestTimer('${exerciseId}')" style="display: none;">Stop Timer</button>
                             </div>
                         </div>
+                        
+                        <div class="completion-checkbox-container">
+                            <input type="checkbox" id="completion-${exerciseId}" class="completion-checkbox" 
+                                   onchange="toggleExerciseCompletion('${exerciseId}', '${workoutKey}')">
+                            <label for="completion-${exerciseId}" class="completion-label">Mark as Completed</label>
+                        </div>
+                        </div>
                     </div>
                 `;
             });
@@ -2177,11 +2275,144 @@ HTML_TEMPLATE = r'''
             // Apply stored substitutions after a short delay to ensure DOM is ready
             setTimeout(() => {
                 applyStoredSubstitutions();
+                // Restore the previously open card
+                restoreOpenCard();
+                // Apply completion status
+                applyCompletionStatus();
             }, 100);
         }
         
         // Global variable to track modal close timeout
         let modalCloseTimeout = null;
+        
+        // Expandable exercise cards functionality
+        function toggleExerciseCard(exerciseId) {
+            const card = document.getElementById(`exercise-${exerciseId}`);
+            const isCollapsed = card.classList.contains('collapsed');
+            
+            // Close all other cards first
+            document.querySelectorAll('.exercise-card').forEach(otherCard => {
+                if (otherCard.id !== `exercise-${exerciseId}`) {
+                    otherCard.classList.add('collapsed');
+                }
+            });
+            
+            // Toggle current card
+            if (isCollapsed) {
+                card.classList.remove('collapsed');
+                // Save the open card position to cookie
+                const cardIndex = Array.from(document.querySelectorAll('.exercise-card')).indexOf(card);
+                setCookie('openExerciseCard', cardIndex, 1); // 1 day expiry
+            } else {
+                card.classList.add('collapsed');
+                // Clear the cookie when closing
+                setCookie('openExerciseCard', '', -1);
+            }
+        }
+        
+        // Cookie management functions
+        function setCookie(name, value, days) {
+            const expires = new Date();
+            expires.setTime(expires.getTime() + (days * 24 * 60 * 60 * 1000));
+            document.cookie = `${name}=${value};expires=${expires.toUTCString()};path=/`;
+        }
+        
+        function getCookie(name) {
+            const nameEQ = name + "=";
+            const ca = document.cookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+                if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+            }
+            return null;
+        }
+        
+        // Restore open card from cookie
+        function restoreOpenCard() {
+            const openCardIndex = getCookie('openExerciseCard');
+            if (openCardIndex !== null && openCardIndex !== '') {
+                const cards = document.querySelectorAll('.exercise-card');
+                if (cards[openCardIndex]) {
+                    cards[openCardIndex].classList.remove('collapsed');
+                }
+            }
+        }
+        
+        // Close all cards when week or workout type changes
+        function closeAllCards() {
+            setCookie('openExerciseCard', '', -1);
+        }
+        
+        // Exercise completion tracking
+        function toggleExerciseCompletion(exerciseId, workoutKey) {
+            const checkbox = document.getElementById(`completion-${exerciseId}`);
+            const card = document.getElementById(`exercise-${exerciseId}`);
+            const completionStatus = document.getElementById(`completion-status-${exerciseId}`);
+            
+            const isCompleted = checkbox.checked;
+            
+            // Update visual state
+            if (isCompleted) {
+                card.classList.add('completed');
+                completionStatus.textContent = '✅';
+            } else {
+                card.classList.remove('completed');
+                completionStatus.textContent = '';
+            }
+            
+            // Save completion status to localStorage
+            saveExerciseCompletion(workoutKey, exerciseId, isCompleted);
+        }
+        
+        function saveExerciseCompletion(workoutKey, exerciseId, isCompleted) {
+            let completionData = JSON.parse(localStorage.getItem('exerciseCompletions') || '{}');
+            const completionKey = `${workoutKey}-${exerciseId}`;
+            
+            if (isCompleted) {
+                completionData[completionKey] = {
+                    completed: true,
+                    timestamp: new Date().toISOString()
+                };
+            } else {
+                delete completionData[completionKey];
+            }
+            
+            localStorage.setItem('exerciseCompletions', JSON.stringify(completionData));
+            console.log(`💾 Saved completion status for ${exerciseId}: ${isCompleted}`);
+        }
+        
+        function loadExerciseCompletion(workoutKey, exerciseId) {
+            const completionData = JSON.parse(localStorage.getItem('exerciseCompletions') || '{}');
+            const completionKey = `${workoutKey}-${exerciseId}`;
+            return completionData[completionKey]?.completed || false;
+        }
+        
+        function applyCompletionStatus() {
+            const week = document.getElementById('week-select').value;
+            const workoutType = document.getElementById('day-select').value;
+            
+            document.querySelectorAll('.exercise-card').forEach(card => {
+                const exerciseId = card.getAttribute('data-exercise-id');
+                const workoutKey = `${week}-${workoutType}-${exerciseId}`;
+                const isCompleted = loadExerciseCompletion(workoutKey, exerciseId);
+                
+                const checkbox = document.getElementById(`completion-${exerciseId}`);
+                const completionStatus = document.getElementById(`completion-status-${exerciseId}`);
+                
+                if (checkbox) {
+                    checkbox.checked = isCompleted;
+                    
+                    if (isCompleted) {
+                        card.classList.add('completed');
+                        completionStatus.textContent = '✅';
+                    } else {
+                        card.classList.remove('completed');
+                        completionStatus.textContent = '';
+                    }
+                }
+            });
+        }
         
         // Exercise substitution functionality
         async function showSubstitutions(exerciseId) {
@@ -2856,12 +3087,14 @@ HTML_TEMPLATE = r'''
 
         // Update workout types when week changes
         document.getElementById('week-select').addEventListener('change', function() {
+            closeAllCards(); // Close all cards when week changes
             updateWorkoutTypes();
             saveCurrentSelections();
         });
         
         // Save workout type selection when changed
         document.getElementById('day-select').addEventListener('change', function() {
+            closeAllCards(); // Close all cards when workout type changes
             saveCurrentSelections();
         });
         
