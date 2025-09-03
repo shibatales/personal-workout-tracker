@@ -450,7 +450,7 @@ LOGIN_TEMPLATE = '''
         
         @media (max-width: 768px) {
             .login-container {
-                padding: 2rem 1.5rem; /* Reduce padding but ensure good spacing */
+                padding: 2rem 1rem; /* Reduce padding but ensure good spacing */
                 margin: 0 1.5rem; /* More margin on mobile */
                 max-width: none; /* Allow container to use available width */
             }
@@ -499,7 +499,7 @@ LOGIN_TEMPLATE = '''
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             border: none;
-            padding: 0.75rem 1.5rem;
+            padding: 0.75rem 1rem;
             border-radius: 8px;
             font-size: 1rem;
             font-weight: 600;
@@ -577,7 +577,7 @@ HTML_TEMPLATE = r'''
         .header-content {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 1.5rem;
+            padding: 0 1rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -707,7 +707,7 @@ HTML_TEMPLATE = r'''
         .exercise-container {
             background: white;
             border-radius: 12px;
-            padding: 1.5rem;
+            padding: 1rem;
             margin-bottom: 2rem;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
             border: 1px solid #e2e8f0;
@@ -716,7 +716,7 @@ HTML_TEMPLATE = r'''
         .exercise-container > .exercise-header {
             background: #f8f9fa;
             margin: -1.5rem -1.5rem 2rem -1.5rem;
-            padding: 1.5rem;
+            padding: 1rem;
             border-radius: 12px 12px 0 0;
             border-bottom: 2px solid #e2e8f0;
         }
@@ -725,7 +725,7 @@ HTML_TEMPLATE = r'''
         .exercise-container .sets-section {
             background: #fafbfc;
             border-radius: 12px;
-            padding: 1.5rem;
+            padding: 1rem;
             margin-bottom: 1.5rem;
             border: 1px solid #e2e8f0;
         }
@@ -733,7 +733,7 @@ HTML_TEMPLATE = r'''
         .exercise-card {
             background: white;
             border-radius: 12px;
-            padding: 1.5rem;
+            padding: 1rem;
             margin-bottom: 2rem;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             border: 1px solid #e2e8f0;
@@ -821,7 +821,7 @@ HTML_TEMPLATE = r'''
             background: #ed8936;
             color: white;
             border: none;
-            padding: 0.75rem 1.5rem;
+            padding: 0.75rem 1rem;
             border-radius: 8px;
             cursor: pointer;
             font-weight: 600;
@@ -834,7 +834,7 @@ HTML_TEMPLATE = r'''
         }
         
             .btn {
-            padding: 0.75rem 1.5rem;
+            padding: 0.75rem 1rem;
             border: none;
             border-radius: 8px;
             font-weight: 600;
@@ -856,7 +856,7 @@ HTML_TEMPLATE = r'''
         .substitute-btn {
             background: linear-gradient(135deg, #ff7b54 0%, #ff6b35 100%);
             color: white;
-            padding: 0.5rem 1rem;
+            padding: 0.75rem 1rem;
             border: none;
             border-radius: 8px;
             font-weight: 600;
@@ -878,7 +878,7 @@ HTML_TEMPLATE = r'''
         .tutorial-btn {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            padding: 0.5rem 1rem;
+            padding: 0.75rem 1rem;
             border: none;
             border-radius: 8px;
             font-weight: 600;
@@ -1171,7 +1171,7 @@ HTML_TEMPLATE = r'''
         }
         
         .substitution-item {
-            padding: 1.5rem;
+            padding: 1rem;
             background: #f7fafc;
             border-radius: 8px;
             cursor: pointer;
@@ -1445,7 +1445,7 @@ HTML_TEMPLATE = r'''
         .btn-rest {
             background: #ed8936;
             color: white;
-            padding: 0.75rem 1.5rem;
+            padding: 0.75rem 1rem;
             border: none;
             border-radius: 4px;
             font-size: 0.9rem;
@@ -1582,7 +1582,7 @@ HTML_TEMPLATE = r'''
         
         .stat-card {
             background: rgba(255, 255, 255, 0.95);
-            padding: 1.5rem;
+            padding: 1rem;
             border-radius: 12px;
             text-align: center;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -1827,7 +1827,7 @@ HTML_TEMPLATE = r'''
                 width: 95%;
                 max-height: 90vh;
                 margin: 1rem;
-                padding: 1.5rem;
+                padding: 1rem;
             }
             
             .modal-header {
@@ -2270,9 +2270,9 @@ HTML_TEMPLATE = r'''
                 html += `
                     <div class="exercise-card collapsed" id="exercise-${exerciseId}" data-exercise-id="${exerciseId}">
                         <div class="exercise-header" onclick="toggleExerciseCard('${exerciseId}')">
-                            <div class="exercise-title">${exerciseIndex}. ${exercise.name}</div>
-                            <div class="completion-status" id="completion-status-${exerciseId}"></div>
-                            <div class="expand-icon">▼</div>
+                            <div class="exercise-title" style="flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-right: 1rem;">${exerciseIndex}. ${exercise.name}</div>
+                            <div class="completion-status" id="completion-status-${exerciseId}" style="flex-shrink: 0;"></div>
+                            <div class="expand-icon" style="flex-shrink: 0;">▼</div>
                         </div>
                         <div class="exercise-content">
                             <div class="exercise-actions">
@@ -2412,11 +2412,16 @@ HTML_TEMPLATE = r'''
         // Restore open card from cookie
         function restoreOpenCard() {
             const openCardIndex = getCookie('openExerciseCard');
-            if (openCardIndex !== null && openCardIndex !== '') {
-                const cards = document.querySelectorAll('.exercise-card');
-                if (cards[openCardIndex]) {
-                    cards[openCardIndex].classList.remove('collapsed');
-                }
+            const cards = document.querySelectorAll('.exercise-card');
+            
+            // First, ensure all cards are collapsed
+            cards.forEach(card => {
+                card.classList.add('collapsed');
+            });
+            
+            // Then open only the saved card if it exists
+            if (openCardIndex !== null && openCardIndex !== '' && cards[openCardIndex]) {
+                cards[openCardIndex].classList.remove('collapsed');
             }
         }
         
