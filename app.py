@@ -2160,9 +2160,17 @@ HTML_TEMPLATE = r'''
                 applyStoredSubstitutions();
             }, 100);
         }
-
-        // Enhanced substitution functions
+        
+        // Global variable to track modal close timeout
+        let modalCloseTimeout = null;
+        
+        // Exercise substitution functionality
         async function showSubstitutions(exerciseId) {
+            // Clear any existing modal close timeout
+            if (modalCloseTimeout) {
+                clearTimeout(modalCloseTimeout);
+                modalCloseTimeout = null;
+            }
             try {
                 const response = await fetch(`/api/substitutions/${exerciseId}`, {
                     credentials: 'same-origin'
@@ -2287,8 +2295,9 @@ HTML_TEMPLATE = r'''
                     }, 3000);
                     
                     // Close modal after a short delay
-                    setTimeout(() => {
+                    modalCloseTimeout = setTimeout(() => {
                         closeModal('substitution-modal');
+                        modalCloseTimeout = null;
                     }, 1500);
                 } else {
                     alert('Error: ' + substitutionExercise.error);
@@ -2324,6 +2333,11 @@ HTML_TEMPLATE = r'''
         }
         
         function closeModal(modalId) {
+            // Clear any pending modal close timeout
+            if (modalCloseTimeout) {
+                clearTimeout(modalCloseTimeout);
+                modalCloseTimeout = null;
+            }
             document.getElementById(modalId).classList.remove('active');
         }
 
