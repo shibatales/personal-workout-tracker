@@ -523,7 +523,7 @@ LOGIN_TEMPLATE = '''
 </head>
 <body>
     <div class="login-container">
-        <h1 class="login-title">🏋️‍♂️ Ultimate Workout Tracker</h1>
+        <h1 class="login-title">🏋️‍♂️ Shiba Tales Workout Tracker</h1>
         <p class="login-subtitle">Enter password to access your workout tracker</p>
         
         {% if error %}
@@ -749,7 +749,6 @@ HTML_TEMPLATE = r'''
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            margin-bottom: 1rem;
             flex-wrap: wrap;
             gap: 1rem;
         }
@@ -793,6 +792,7 @@ HTML_TEMPLATE = r'''
             display: flex;
             gap: 0.75rem;
             flex-wrap: wrap;
+            margin: 1rem 0;
         }
         
         .original-badge {
@@ -1731,115 +1731,86 @@ HTML_TEMPLATE = r'''
             transition: all 0.3s ease;
             background: white;
             border-radius: 12px;
-            margin-bottom: 1rem;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
+            margin-bottom: 0.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);        }
         
-        .exercise-card.collapsed .exercise-content {
-            display: none !important;
-        }
-        
-        .exercise-card.collapsed .exercise-header {
-            cursor: pointer;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border-radius: 12px;
-            padding: 1rem;
-            margin-bottom: 0;
-        }
-        
-        .exercise-card.collapsed.completed .exercise-header {
-            background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
-        }
-        
-        .exercise-card.collapsed .exercise-header:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
-        }
-        
-        .exercise-card.collapsed.completed .exercise-header:hover {
-            box-shadow: 0 8px 25px rgba(72, 187, 120, 0.3);
-        }
-        
-        .exercise-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: nowrap;
-        }
-        
-        .exercise-title {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: white;
-            flex: 1;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-        
-        .completion-status {
-            font-size: 1.5rem;
-            margin-right: 0.5rem;
-        }
-        
-        .expand-icon {
-            font-size: 1.5rem;
-            color: white;
-            transition: transform 0.3s ease;
-        }
-        
-        .exercise-card:not(.collapsed) .expand-icon {
-            transform: rotate(180deg);
-        }
-        
-        .exercise-card:not(.collapsed) .exercise-header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border-radius: 12px 12px 0 0;
-            padding: 1rem;
-            margin-bottom: 0;
-        }
-        
-        .exercise-card:not(.collapse        .exercise-content {
-            padding: 0.5rem;
-            border-radius: 0 0 12px 12px;
-        }    
-        .completion-checkbox-container {
-            margin-top: 1rem;
-            padding: 1rem;
-            border-top: 2px solid #e2e8f0;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .completion-checkbox {
-            width: 20px;
-            height: 20px;
-            cursor: pointer;
-        }
-        
-        .completion-label {
-            font-weight: 600;
-            color: #2d3748;
-            cursor: pointer;
-        }ments */
-            .modal-content {
-                width: 95%;
-                max-height: 90vh;
-                margin: 1rem;
-                padding: 1rem;
+        /* Mobile responsive styles */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
             }
             
-            .modal-header {
-                margin-bottom: 1rem;
-            }
-            
-            .modal-header h3 {
+            .logo {
                 font-size: 1.1rem;
+                text-align: center;
+            }
+            
+            .nav {
+                flex-direction: row;
+                gap: 0.5rem;
+                flex-shrink: 0;
+                justify-content: center;
+            }
+            
+            .nav a {
+                padding: 0.5rem 1rem;
+                font-size: 0.9rem;
+            }
+            
+            .exercise-card {
+                margin-bottom: 0.5rem;
+            }
+            
+            .exercise-header {
+                padding: 0.75rem !important;
+                min-height: 50px !important;
+            }
+            
+            .exercise-title {
+                font-size: 0.9rem !important;
+                line-height: 1.1 !important;
+                font-weight: 600 !important;
+            }
+            
+            .expand-icon {
+                font-size: 1rem !important;
+                width: 20px !important;
+            }
+            
+            .set-row {
+                grid-template-columns: 50px 80px 80px 40px;
+                gap: 0.25rem;
+            }
+            
+            .remove-link {
+                width: 30px;
+                height: 30px;
+                font-size: 0.8rem;
+                padding: 0;
             }
         }
-    </style>
-</head>
+        
+        /* CRITICAL: Exercise card collapse functionality with maximum specificity */
+        body div.exercise-card.collapsed div.exercise-content {
+            display: none !important;
+            visibility: hidden !important;
+            height: 0px !important;
+            overflow: hidden !important;
+            opacity: 0 !important;
+        }
+        
+        body div.exercise-card:not(.collapsed) div.exercise-content {
+            display: block !important;
+            visibility: visible !important;
+            height: auto !important;
+            overflow: visible !important;
+            opacity: 1 !important;
+        }
+        
+        </style>
+    </head>
 <body>
     <div class="header">
         <div class="header-content">
@@ -2270,9 +2241,9 @@ HTML_TEMPLATE = r'''
                 html += `
                     <div class="exercise-card collapsed" id="exercise-${exerciseId}" data-exercise-id="${exerciseId}">
                         <div class="exercise-header" onclick="toggleExerciseCard('${exerciseId}')">
-                            <div class="exercise-title" style="flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-right: 1rem;">${exerciseIndex}. ${exercise.name}</div>
-                            <div class="completion-status" id="completion-status-${exerciseId}" style="flex-shrink: 0;"></div>
-                            <div class="expand-icon" style="flex-shrink: 0;">▼</div>
+                            <div class="exercise-title">${exerciseIndex}. ${exercise.name}</div>
+                            <div class="completion-status" id="completion-status-${exerciseId}"></div>
+                            <div class="expand-icon">▼</div>
                         </div>
                         <div class="exercise-content">
                             <div class="exercise-actions">
@@ -2356,6 +2327,17 @@ HTML_TEMPLATE = r'''
             // Apply stored substitutions after a short delay to ensure DOM is ready
             setTimeout(() => {
                 applyStoredSubstitutions();
+                
+                // Ensure all cards start collapsed except first one
+                const workoutCards = document.querySelectorAll('.exercise-card:not(.exercise-db-item)');
+                workoutCards.forEach((card, index) => {
+                    if (index === 0) {
+                        card.classList.remove('collapsed');
+                    } else {
+                        card.classList.add('collapsed');
+                    }
+                });
+                
                 // Restore the previously open card
                 restoreOpenCard();
                 // Apply completion status
@@ -2365,29 +2347,50 @@ HTML_TEMPLATE = r'''
         
         // Global variable to track modal close timeout
         let modalCloseTimeout = null;
-        
-        // Expandable exercise cards functionality
+          // Expandable exercise cards functionality
         function toggleExerciseCard(exerciseId) {
             const card = document.getElementById(`exercise-${exerciseId}`);
-            const isCollapsed = card.classList.contains('collapsed');
+            const cards = document.querySelectorAll('.exercise-card:not(.exercise-db-item)'); // Only workout cards
             
-            // Close all other cards first
-            document.querySelectorAll('.exercise-card').forEach(otherCard => {
-                if (otherCard.id !== `exercise-${exerciseId}`) {
-                    otherCard.classList.add('collapsed');
+            if (card) {
+                const content = card.querySelector('.exercise-content');
+                if (!content) return;
+                
+                // If this card is currently collapsed, expand it and collapse all others
+                if (card.classList.contains('collapsed')) {
+                    // Collapse all other cards
+                    cards.forEach(otherCard => {
+                        if (otherCard !== card) {
+                            otherCard.classList.add('collapsed');
+                            const otherContent = otherCard.querySelector('.exercise-content');
+                            if (otherContent) {
+                                otherContent.style.display = 'none';
+                                otherContent.style.visibility = 'hidden';
+                                otherContent.style.height = '0px';
+                                otherContent.style.overflow = 'hidden';
+                            }
+                        }
+                    });
+                    
+                    // Expand this card
+                    card.classList.remove('collapsed');
+                    content.style.display = 'block';
+                    content.style.visibility = 'visible';
+                    content.style.height = 'auto';
+                    content.style.overflow = 'visible';
+                    
+                    // Save the open card index
+                    const cardIndex = Array.from(cards).indexOf(card);
+                    setCookie('openExerciseCard', cardIndex, 30);
+                } else {
+                    // Collapse this card
+                    card.classList.add('collapsed');
+                    content.style.display = 'none';
+                    content.style.visibility = 'hidden';
+                    content.style.height = '0px';
+                    content.style.overflow = 'hidden';
+                    setCookie('openExerciseCard', '', 30);
                 }
-            });
-            
-            // Toggle current card
-            if (isCollapsed) {
-                card.classList.remove('collapsed');
-                // Save the open card position to cookie
-                const cardIndex = Array.from(document.querySelectorAll('.exercise-card')).indexOf(card);
-                setCookie('openExerciseCard', cardIndex, 1); // 1 day expiry
-            } else {
-                card.classList.add('collapsed');
-                // Clear the cookie when closing
-                setCookie('openExerciseCard', '', -1);
             }
         }
         
@@ -2412,21 +2415,47 @@ HTML_TEMPLATE = r'''
         // Restore open card from cookie
         function restoreOpenCard() {
             const openCardIndex = getCookie('openExerciseCard');
-            const cards = document.querySelectorAll('.exercise-card');
+            const cards = document.querySelectorAll('.exercise-card:not(.exercise-db-item)'); // Only workout cards, not database cards
             
-            // First, ensure all cards are collapsed
+            // First, ensure all workout cards are collapsed with direct style manipulation
             cards.forEach(card => {
                 card.classList.add('collapsed');
+                const content = card.querySelector('.exercise-content');
+                if (content) {
+                    content.style.display = 'none';
+                    content.style.visibility = 'hidden';
+                    content.style.height = '0px';
+                    content.style.overflow = 'hidden';
+                }
             });
             
             // Then open only the saved card if it exists
             if (openCardIndex !== null && openCardIndex !== '' && cards[openCardIndex]) {
-                cards[openCardIndex].classList.remove('collapsed');
+                const savedCard = cards[openCardIndex];
+                savedCard.classList.remove('collapsed');
+                const content = savedCard.querySelector('.exercise-content');
+                if (content) {
+                    content.style.display = 'block';
+                    content.style.visibility = 'visible';
+                    content.style.height = 'auto';
+                    content.style.overflow = 'visible';
+                }
             }
         }
         
         // Close all cards when week or workout type changes
         function closeAllCards() {
+            const cards = document.querySelectorAll('.exercise-card:not(.exercise-db-item)');
+            cards.forEach(card => {
+                card.classList.add('collapsed');
+                const content = card.querySelector('.exercise-content');
+                if (content) {
+                    content.style.display = 'none';
+                    content.style.visibility = 'hidden';
+                    content.style.height = '0px';
+                    content.style.overflow = 'hidden';
+                }
+            });
             setCookie('openExerciseCard', '', -1);
         }
         
