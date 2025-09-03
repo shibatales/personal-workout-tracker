@@ -751,6 +751,7 @@ HTML_TEMPLATE = r'''
             align-items: flex-start;
             flex-wrap: wrap;
             gap: 1rem;
+            cursor: pointer;
         }
         
         .exercise-title {
@@ -2261,10 +2262,6 @@ HTML_TEMPLATE = r'''
                                 <div class="stat-value" id="equipment-${exerciseId}">${exercise.equipment}</div>
                             </div>
                             <div class="stat-item">
-                                <div class="stat-label">Lift Type</div>
-                                <div class="stat-value">${exercise.body_part}</div>
-                            </div>
-                            <div class="stat-item">
                                 <div class="stat-label">Reps</div>
                                 <div class="stat-value">${exercise.reps}</div>
                             </div>
@@ -2471,6 +2468,16 @@ HTML_TEMPLATE = r'''
             if (isCompleted) {
                 card.classList.add('completed');
                 completionStatus.textContent = '✅';
+                
+                // Auto-close the accordion when marked as completed
+                const content = card.querySelector('.exercise-content');
+                if (content && !card.classList.contains('collapsed')) {
+                    card.classList.add('collapsed');
+                    content.style.display = 'none';
+                    content.style.visibility = 'hidden';
+                    content.style.height = '0px';
+                    content.style.overflow = 'hidden';
+                }
             } else {
                 card.classList.remove('completed');
                 completionStatus.textContent = '';
