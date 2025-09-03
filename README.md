@@ -200,7 +200,7 @@ SECRET_KEY=your-secret-key
 
 After deployment, verify these features work:
 
-- ✅ **Login Page:** Password `N1ppl3$` works
+- ✅ **Login Page:** Password works
 - ✅ **Week Selection:** Dropdown shows Weeks 1-12
 - ✅ **Workout Types:** Shows available workout types per week
 - ✅ **Exercise Loading:** Exercises display correctly
