@@ -1296,8 +1296,8 @@ HTML_TEMPLATE = r'''
         
         .set-row {
             display: grid;
-            grid-template-columns: 60px 120px 120px 40px;
-            gap: 0.5rem;
+            grid-template-columns: 60px 140px 140px 50px;
+            gap: 0.75rem;
             align-items: center;
             padding: 0.75rem;
             background: white;
