@@ -597,7 +597,8 @@ HTML_TEMPLATE = r'''
         .nav {
             display: flex;
             gap: 0.5rem;
-            flex-wrap: wrap;
+            flex-wrap: nowrap;
+            align-items: center;
         }
         
         .nav-btn {
@@ -1763,6 +1764,7 @@ HTML_TEMPLATE = r'''
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: nowrap;
         }
         
         .exercise-title {
@@ -1770,6 +1772,9 @@ HTML_TEMPLATE = r'''
             font-weight: 600;
             color: white;
             flex: 1;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
         
         .completion-status {
@@ -1794,11 +1799,10 @@ HTML_TEMPLATE = r'''
             margin-bottom: 0;
         }
         
-        .exercise-card:not(.collapsed) .exercise-content {
-            padding: 1rem;
+        .exercise-card:not(.collapse        .exercise-content {
+            padding: 0.5rem;
             border-radius: 0 0 12px 12px;
-        }
-        
+        }    
         .completion-checkbox-container {
             margin-top: 1rem;
             padding: 1rem;
@@ -1851,9 +1855,13 @@ HTML_TEMPLATE = r'''
                     font-size: 12px;
                     font-weight: bold;
                     margin-right: 1rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    white-space: nowrap;
                 ">🟢 Online</div>
                 <a href="#" class="nav-btn active" onclick="showPage('workout')">Workout</a>
-                <a href="#" class="nav-btn" onclick="showPage('database')">Exercise Database</a>
+                <a href="#" class="nav-btn" onclick="showPage('database')">Exercise DB</a>
             </nav>
         </div>
     </div>
@@ -1912,6 +1920,7 @@ HTML_TEMPLATE = r'''
         const workoutTemplates = {};
         let currentExerciseId = null;
         let workoutData = {};
+        let cachedWorkoutData = null; // Store all workout data for offline use
         let restTimers = {};
 
         // Load workout data from localStorage
@@ -2221,7 +2230,26 @@ HTML_TEMPLATE = r'''
                 }
             } catch (error) {
                 console.error('Error loading exercises:', error);
-                document.getElementById('workout-content').innerHTML = '<p>Error loading exercises. Please try again.</p>';
+                
+                // Try to load from cached data if available
+                if (typeof cachedWorkoutData !== 'undefined' && cachedWorkoutData) {
+                    console.log('🔄 Loading from cached data due to network error');
+                    const cachedExercises = cachedWorkoutData.filter(ex => 
+                        ex.week == week && ex.workout_type === workoutType
+                    );
+                    
+                    if (cachedExercises.length > 0) {
+                        displayWorkout(cachedExercises, week, workoutType);
+                        return;
+                    }
+                }
+                
+                document.getElementById('workout-content').innerHTML = `
+                    <div style="text-align: center; padding: 2rem; color: #666;">
+                        <p>Unable to load exercises. Please check your connection and try again.</p>
+                        <button onclick="loadWorkout()" style="margin-top: 1rem; padding: 0.5rem 1rem; background: #4299e1; color: white; border: none; border-radius: 8px; cursor: pointer;">Retry</button>
+                    </div>
+                `;
             }
         }
 
@@ -3211,6 +3239,13 @@ HTML_TEMPLATE = r'''
             console.log('Pre-caching workout data for offline use...');
             
             try {
+                // Load and cache all exercise data
+                const response = await fetch('/api/exercises', { credentials: 'same-origin' });
+                if (response.ok) {
+                    cachedWorkoutData = await response.json();
+                    console.log(`✅ Cached ${cachedWorkoutData.length} exercises for offline use`);
+                }
+                
                 // Cache all week/workout type combinations
                 for (let week = 1; week <= 12; week++) {
                     const workoutTypes = ['Upper (Strength)', 'Lower (Strength)', 'Pull (Hypertrophy)', 'Push (Hypertrophy)', 'Legs (Hypertrophy)'];
