@@ -2223,7 +2223,21 @@ HTML_TEMPLATE = r'''
             }
             
             try {
-                const response = await fetch(`/api/exercises?week=${week}&workout_type=${encodeURIComponent(workoutType)}`);
+                const response = await fetch(`/api/exercises?week=${week}&workout_type=${encodeURIComponent(workoutType)}`, {
+                    credentials: 'same-origin'
+                });
+                
+                // Check if response indicates authentication failure
+                if (response.status === 401 || response.status === 403) {
+                    console.log('🔐 Authentication failed, redirecting to login...');
+                    window.location.href = '/login';
+                    return;
+                }
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
+                
                 const exercises = await response.json();
                 
                 if (exercises && exercises.length > 0) {
@@ -2250,7 +2264,7 @@ HTML_TEMPLATE = r'''
                 document.getElementById('workout-content').innerHTML = `
                     <div style="text-align: center; padding: 2rem; color: #666;">
                         <p>Unable to load exercises. Please check your connection and try again.</p>
-                        <button onclick="loadWorkout()" style="margin-top: 1rem; padding: 0.5rem 1rem; background: #4299e1; color: white; border: none; border-radius: 8px; cursor: pointer;">Retry</button>
+                        <button onclick="updateWorkout()" style="margin-top: 1rem; padding: 0.5rem 1rem; background: #4299e1; color: white; border: none; border-radius: 8px; cursor: pointer;">Retry</button>
                     </div>
                 `;
             }
