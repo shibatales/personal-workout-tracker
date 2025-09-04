@@ -1044,7 +1044,7 @@ HTML_TEMPLATE = r'''
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
             gap: 1rem;
-            margin: 1rem 0;
+            margin-bottom: 1.5rem;
         }
         
         .stat-item {
@@ -2649,55 +2649,87 @@ HTML_TEMPLATE = r'''
                 }
                 
                 const substitutions = await response.json();
+                displaySubstitutionModal(exerciseId, substitutions);
                 
-                const modal = document.getElementById('substitution-modal');
-                const list = document.getElementById('substitution-list');
+            } catch (error) {
+                console.error('Error loading substitutions:', error);
                 
-                if (substitutions.length === 0) {
-                    list.innerHTML = '<p style="text-align: center; color: #718096;">No substitutions available for this exercise.</p>';
-                } else {
-                    // Get current selection to highlight it
-                    const currentSubstitution = getStoredSubstitution(exerciseId);
+                // Fallback to cached data if available
+                if (typeof cachedWorkoutData !== 'undefined' && cachedWorkoutData) {
+                    console.log('🔄 Loading substitutions from cached data due to network error');
                     
-                    // Add original exercise option first
-                    const originalExercise = await getOriginalExercise(exerciseId);
-                    let html = '';
-                    
-                    if (originalExercise) {
-                        const isCurrentlyOriginal = !currentSubstitution || currentSubstitution === originalExercise.id;
-                        html += `
-                            <div class="substitution-item original-exercise ${isCurrentlyOriginal ? 'selected' : ''}" onclick="selectSubstitution('${exerciseId}', '${originalExercise.id}', true)">
-                                <div class="substitution-name">
-                                    <span class="original-badge">ORIGINAL</span>
-                                    ${originalExercise.name}
-                                </div>
-                                <div class="substitution-details">Muscle: ${originalExercise.muscle}</div>
-                                <div class="substitution-equipment">
-                                    <span class="equipment-tag">${originalExercise.equipment}</span>
-                                </div>
-                            </div>
-                        `;
+                    // Find the exercise in cached data
+                    const exercise = cachedWorkoutData.find(ex => ex.id === exerciseId);
+                    if (exercise && exercise.substitutions) {
+                        displaySubstitutionModal(exerciseId, exercise.substitutions);
+                        return;
                     }
-                    
-                    // Add substitution options
-                    html += substitutions.map(sub => {
-                        const isCurrentlySelected = currentSubstitution === sub.id;
-                        return `
-                            <div class="substitution-item ${isCurrentlySelected ? 'selected' : ''}" onclick="selectSubstitution('${exerciseId}', '${sub.id}')">
-                                <div class="substitution-name">${sub.name}</div>
-                                <div class="substitution-details">Muscle: ${sub.muscle}</div>
-                                <div class="substitution-equipment">
-                                    <span class="equipment-tag">${sub.equipment_name}</span>
-                                </div>
-                            </div>
-                        `;
-                    }).join('');
-                    
-                    // Add reset button
+                }
+                
+                // If no cached data, show error
+                console.error('No cached substitution data available');
+            }
+        }
+        
+        // Display substitution modal (extracted for reuse)
+        async function displaySubstitutionModal(exerciseId, substitutions) {
+            const modal = document.getElementById('substitution-modal');
+            const list = document.getElementById('substitution-list');
+            
+            if (substitutions.length === 0) {
+                list.innerHTML = '<p style="text-align: center; color: #718096;">No substitutions available for this exercise.</p>';
+            } else {
+                // Get current selection to highlight it
+                const currentSubstitution = getStoredSubstitution(exerciseId);
+                
+                // Add original exercise option first
+                const originalExercise = await getOriginalExercise(exerciseId);
+                let html = '';
+                
+                if (originalExercise) {
+                    const isCurrentlyOriginal = !currentSubstitution || currentSubstitution === originalExercise.id;
                     html += `
-                        <div class="modal-actions">
-                            <button class="btn btn-reset" onclick="resetToOriginal('${exerciseId}')">
-                                🔄 Reset to Original
+                        <div class="substitution-item original-exercise ${isCurrentlyOriginal ? 'selected' : ''}" onclick="selectSubstitution('${exerciseId}', '${originalExercise.id}', true)">
+                            <div class="substitution-name">
+                                <span class="original-badge">ORIGINAL</span>
+                                ${originalExercise.name}
+                            </div>
+                            <div class="substitution-details">Muscle: ${originalExercise.muscle}</div>
+                            <div class="substitution-equipment">
+                                <span class="equipment-tag">${originalExercise.equipment}</span>
+                            </div>
+                        </div>
+                    `;
+                }
+                
+                // Add substitution options
+                html += substitutions.map(sub => {
+                    const isCurrentlySelected = currentSubstitution === sub.id;
+                    return `
+                        <div class="substitution-item ${isCurrentlySelected ? 'selected' : ''}" onclick="selectSubstitution('${exerciseId}', '${sub.id}')">
+                            <div class="substitution-name">${sub.name}</div>
+                            <div class="substitution-details">Muscle: ${sub.muscle}</div>
+                            <div class="substitution-equipment">
+                                <span class="equipment-tag">${sub.equipment_name || sub.equipment}</span>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+                
+                // Add reset button
+                html += `
+                    <div class="modal-actions">
+                        <button class="btn btn-reset" onclick="resetToOriginal('${exerciseId}')">
+                            🔄 Reset to Original
+                        </button>
+                    </div>
+                `;
+                
+                list.innerHTML = html;
+            }
+            
+            modal.classList.add('active');
+        }
                             </button>
                         </div>
                     `;
@@ -2720,6 +2752,20 @@ HTML_TEMPLATE = r'''
                 }
             } catch (error) {
                 console.error('Error getting original exercise:', error);
+                
+                // Fallback to cached data if available
+                if (typeof cachedWorkoutData !== 'undefined' && cachedWorkoutData) {
+                    console.log('🔄 Getting original exercise from cached data due to network error');
+                    const exercise = cachedWorkoutData.find(ex => ex.id === exerciseId);
+                    if (exercise) {
+                        return {
+                            id: exercise.id,
+                            name: exercise.name,
+                            muscle: exercise.muscle,
+                            equipment: exercise.equipment
+                        };
+                    }
+                }
             }
             return null;
         }
@@ -2772,7 +2818,57 @@ HTML_TEMPLATE = r'''
                 }
             } catch (error) {
                 console.error('Error substituting exercise:', error);
-                alert('Error substituting exercise');
+                
+                // Fallback to offline substitution if cached data is available
+                if (typeof cachedWorkoutData !== 'undefined' && cachedWorkoutData) {
+                    console.log('🔄 Performing offline substitution using cached data');
+                    
+                    // Find the substitution exercise in cached data
+                    let substitutionExercise = cachedWorkoutData.find(ex => ex.id === substitutionId);
+                    
+                    // If not found in main exercises, check substitutions
+                    if (!substitutionExercise) {
+                        for (const exercise of cachedWorkoutData) {
+                            if (exercise.substitutions) {
+                                substitutionExercise = exercise.substitutions.find(sub => sub.id === substitutionId);
+                                if (substitutionExercise) break;
+                            }
+                        }
+                    }
+                    
+                    if (substitutionExercise) {
+                        // Create exercise object in expected format
+                        const exerciseData = {
+                            id: substitutionExercise.id,
+                            name: substitutionExercise.name,
+                            muscle: substitutionExercise.muscle,
+                            equipment: substitutionExercise.equipment_name || substitutionExercise.equipment
+                        };
+                        
+                        // Update the exercise card
+                        updateExerciseCard(originalId, exerciseData);
+                        
+                        // Store substitution in localStorage for persistence
+                        storeSubstitution(originalId, substitutionId, isReset);
+                        
+                        // Show success message
+                        const successMsg = document.getElementById('substitution-success');
+                        successMsg.classList.add('show');
+                        setTimeout(() => {
+                            successMsg.classList.remove('show');
+                        }, 3000);
+                        
+                        // Close modal after a short delay
+                        modalCloseTimeout = setTimeout(() => {
+                            closeModal('substitution-modal');
+                            modalCloseTimeout = null;
+                        }, 1500);
+                        
+                        return;
+                    }
+                }
+                
+                alert('Error substituting exercise - no cached data available');
             }
         }
 
