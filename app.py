@@ -1044,7 +1044,7 @@ HTML_TEMPLATE = r'''
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
             gap: 1rem;
-            margin-bottom: 1.5rem;
+            margin: 1rem 0;
         }
         
         .stat-item {
