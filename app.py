@@ -2210,6 +2210,35 @@ HTML_TEMPLATE = r'''
                 updateWorkout();
             } catch (error) {
                 console.error('Error loading workout types:', error);
+                
+                // Fallback to cached data if available
+                if (typeof cachedWorkoutData !== 'undefined' && cachedWorkoutData) {
+                    console.log('🔄 Loading workout types from cached data due to network error');
+                    const cachedTypes = [...new Set(cachedWorkoutData
+                        .filter(ex => ex.week == week)
+                        .map(ex => ex.workout_type))];
+                    
+                    if (cachedTypes.length > 0) {
+                        daySelect.innerHTML = '';
+                        cachedTypes.forEach(type => {
+                            const option = document.createElement('option');
+                            option.value = type;
+                            option.textContent = type;
+                            daySelect.appendChild(option);
+                        });
+                        
+                        // Restore previous selection if it exists
+                        if (currentSelection && cachedTypes.includes(currentSelection)) {
+                            daySelect.value = currentSelection;
+                        }
+                        
+                        updateWorkout();
+                        return;
+                    }
+                }
+                
+                // If no cached data, show error
+                daySelect.innerHTML = '<option value="">No Options</option>';
             }
         }
 
@@ -3417,7 +3446,7 @@ HTML_TEMPLATE = r'''
                 statusIndicator.innerHTML = '🟢 Online';
                 statusIndicator.style.color = '#4CAF50';
             } else {
-                statusIndicator.innerHTML = '🔴 Offline (Gym Mode)';
+                statusIndicator.innerHTML = '🔴 Offline';
                 statusIndicator.style.color = '#f44336';
             }
         }
