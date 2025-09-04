@@ -222,7 +222,7 @@
           "id": "SUB_EX001_2",
           "name": "45\u00b0 Incline Machine Press",
           "muscle": "Chest",
-          "equipment": "Weight Machine",
+          "equipment": "Machine",
           "body_part": "Upper"
         }
       ],
@@ -272,7 +272,7 @@
           "id": "SUB_EX002_2",
           "name": "Pec Deck",
           "muscle": "Chest",
-          "equipment": "Various",
+          "equipment": "Machine",
           "body_part": "Upper"
         }
       ],
@@ -416,7 +416,7 @@
           "id": "SUB_EX005_2",
           "name": "Smith Machine Row",
           "muscle": "Back",
-          "equipment": "Smith Machine",
+          "equipment": "Machine",
           "body_part": "Upper"
         },
         {
@@ -503,16 +503,16 @@
       "substitutions": [
         {
           "id": "SUB_EX007_1",
-          "name": "Cable Rope Hammer Curl",
+          "name": "Bayesian Cable Curl",
           "muscle": "Biceps",
           "equipment": "Cable Machine",
           "body_part": "Upper"
         },
         {
           "id": "SUB_EX007_2",
-          "name": "EZ-Bar Cable Curl",
+          "name": "Incline DB Stretch Curl",
           "muscle": "Biceps",
-          "equipment": "Cable Machine",
+          "equipment": "Dumbbell",
           "body_part": "Upper"
         }
       ],
@@ -666,7 +666,7 @@
         {
           "id": "SUB_EX011_1",
           "name": "Reverse Nordic",
-          "muscle": "Quadriceps",
+          "muscle": "Hamstrings",
           "equipment": "Various",
           "body_part": "Lower"
         },
@@ -706,7 +706,7 @@
           "id": "SUB_EX012_1",
           "name": "Leg Press Calf Press",
           "muscle": "Calves",
-          "equipment": "Various",
+          "equipment": "Machine",
           "body_part": "Lower"
         },
         {
@@ -764,16 +764,16 @@
       "substitutions": [
         {
           "id": "SUB_EX013_1",
-          "name": "Decline Weighted Crunch",
+          "name": "Decline Crunch",
           "muscle": "Abs",
           "equipment": "Various",
           "body_part": "Lower"
         },
         {
           "id": "SUB_EX013_2",
-          "name": "Machine Crunch",
+          "name": "Weighted Machine Crunch",
           "muscle": "Abs",
-          "equipment": "Weight Machine",
+          "equipment": "Machine",
           "body_part": "Lower"
         }
       ],
@@ -805,7 +805,7 @@
           "id": "SUB_EX014_1",
           "name": "Neutral-Grip Pull-Up",
           "muscle": "Back",
-          "equipment": "Pull-up Bar",
+          "equipment": "Various",
           "body_part": "Pull"
         },
         {
@@ -842,16 +842,16 @@
       "substitutions": [
         {
           "id": "SUB_EX015_1",
-          "name": "Incline Chest-Supported DB Row",
+          "name": "Chest-Supported T-Bar Row",
           "muscle": "Back",
-          "equipment": "Dumbbell",
+          "equipment": "Various",
           "body_part": "Pull"
         },
         {
           "id": "SUB_EX015_2",
-          "name": "Chest-Supported T-Bar Row",
+          "name": "Incline Chest-Supported DB Row",
           "muscle": "Back",
-          "equipment": "Various",
+          "equipment": "Dumbbell",
           "body_part": "Pull"
         }
       ],
@@ -929,7 +929,7 @@
           "id": "SUB_EX017_2",
           "name": "Reverse Pec Deck",
           "muscle": "Shoulders",
-          "equipment": "Weight Machine",
+          "equipment": "Machine",
           "body_part": "Pull"
         }
       ],
@@ -966,8 +966,8 @@
         },
         {
           "id": "SUB_EX018_2",
-          "name": "Seated Super-Bayesian Curl",
-          "muscle": "Biceps",
+          "name": "DB Shrug",
+          "muscle": "Back",
           "equipment": "Dumbbell",
           "body_part": "Upper"
         }
@@ -1000,7 +1000,7 @@
           "id": "SUB_EX019_1",
           "name": "EZ-Bar Curl",
           "muscle": "Biceps",
-          "equipment": "Various",
+          "equipment": "Barbell",
           "body_part": "Pull"
         },
         {
@@ -1039,7 +1039,7 @@
           "id": "SUB_EX020_1",
           "name": "EZ-Bar Preacher Curl",
           "muscle": "Biceps",
-          "equipment": "Various",
+          "equipment": "Barbell",
           "body_part": "Pull"
         },
         {
@@ -1084,7 +1084,7 @@
           "id": "SUB_EX021_1",
           "name": "Machine Chest Press",
           "muscle": "Chest",
-          "equipment": "Weight Machine",
+          "equipment": "Machine",
           "body_part": "Push"
         },
         {
@@ -1307,8 +1307,8 @@
         {
           "id": "SUB_EX026_2",
           "name": "Bench Dip",
-          "muscle": "Triceps",
-          "equipment": "Bodyweight",
+          "muscle": "Chest",
+          "equipment": "Various",
           "body_part": "Push"
         }
       ],
@@ -1340,14 +1340,14 @@
           "id": "SUB_EX027_1",
           "name": "Hanging Leg Raise",
           "muscle": "Abs",
-          "equipment": "Bodyweight",
+          "equipment": "Various",
           "body_part": "Core"
         },
         {
           "id": "SUB_EX027_2",
           "name": "Modified Candlestick",
           "muscle": "Abs",
-          "equipment": "Bodyweight",
+          "equipment": "Various",
           "body_part": "Core"
         }
       ],
@@ -1379,7 +1379,7 @@
           "id": "SUB_EX028_1",
           "name": "Smith Machine Static Lunge",
           "muscle": "Quadriceps",
-          "equipment": "Smith Machine",
+          "equipment": "Machine",
           "body_part": "Legs"
         },
         {
@@ -1501,7 +1501,7 @@
         {
           "id": "SUB_EX031_1",
           "name": "Reverse Nordic",
-          "muscle": "Quadriceps",
+          "muscle": "Hamstrings",
           "equipment": "Various",
           "body_part": "Lower"
         },
@@ -1619,7 +1619,7 @@
           "id": "SUB_EX034_1",
           "name": "Leg Press Calf Press",
           "muscle": "Calves",
-          "equipment": "Various",
+          "equipment": "Machine",
           "body_part": "Lower"
         },
         {
@@ -1686,7 +1686,7 @@
           "id": "SUB_EX035_2",
           "name": "45\u00b0 Incline Machine Press",
           "muscle": "Chest",
-          "equipment": "Weight Machine",
+          "equipment": "Machine",
           "body_part": "Upper"
         }
       ],
@@ -1736,7 +1736,7 @@
           "id": "SUB_EX036_2",
           "name": "Pec Deck",
           "muscle": "Chest",
-          "equipment": "Various",
+          "equipment": "Machine",
           "body_part": "Upper"
         }
       ],
@@ -1875,7 +1875,7 @@
           "id": "SUB_EX039_2",
           "name": "Smith Machine Row",
           "muscle": "Back",
-          "equipment": "Smith Machine",
+          "equipment": "Machine",
           "body_part": "Upper"
         },
         {
@@ -1962,16 +1962,16 @@
       "substitutions": [
         {
           "id": "SUB_EX041_1",
-          "name": "Cable Rope Hammer Curl",
+          "name": "Bayesian Cable Curl",
           "muscle": "Biceps",
           "equipment": "Cable Machine",
           "body_part": "Upper"
         },
         {
           "id": "SUB_EX041_2",
-          "name": "EZ-Bar Cable Curl",
+          "name": "Incline DB Stretch Curl",
           "muscle": "Biceps",
-          "equipment": "Cable Machine",
+          "equipment": "Dumbbell",
           "body_part": "Upper"
         }
       ],
@@ -2125,7 +2125,7 @@
         {
           "id": "SUB_EX045_1",
           "name": "Reverse Nordic",
-          "muscle": "Quadriceps",
+          "muscle": "Hamstrings",
           "equipment": "Various",
           "body_part": "Lower"
         },
@@ -2165,7 +2165,7 @@
           "id": "SUB_EX046_1",
           "name": "Leg Press Calf Press",
           "muscle": "Calves",
-          "equipment": "Various",
+          "equipment": "Machine",
           "body_part": "Lower"
         },
         {
@@ -2223,16 +2223,16 @@
       "substitutions": [
         {
           "id": "SUB_EX047_1",
-          "name": "Decline Weighted Crunch",
+          "name": "Decline Crunch",
           "muscle": "Abs",
           "equipment": "Various",
           "body_part": "Lower"
         },
         {
           "id": "SUB_EX047_2",
-          "name": "Machine Crunch",
+          "name": "Weighted Machine Crunch",
           "muscle": "Abs",
-          "equipment": "Weight Machine",
+          "equipment": "Machine",
           "body_part": "Lower"
         }
       ],
@@ -2264,7 +2264,7 @@
           "id": "SUB_EX048_1",
           "name": "Neutral-Grip Pull-Up",
           "muscle": "Back",
-          "equipment": "Pull-up Bar",
+          "equipment": "Various",
           "body_part": "Pull"
         },
         {
@@ -2301,16 +2301,16 @@
       "substitutions": [
         {
           "id": "SUB_EX049_1",
-          "name": "Incline Chest-Supported DB Row",
+          "name": "Chest-Supported T-Bar Row",
           "muscle": "Back",
-          "equipment": "Dumbbell",
+          "equipment": "Various",
           "body_part": "Pull"
         },
         {
           "id": "SUB_EX049_2",
-          "name": "Chest-Supported T-Bar Row",
+          "name": "Incline Chest-Supported DB Row",
           "muscle": "Back",
-          "equipment": "Various",
+          "equipment": "Dumbbell",
           "body_part": "Pull"
         }
       ],
@@ -2388,7 +2388,7 @@
           "id": "SUB_EX051_2",
           "name": "Reverse Pec Deck",
           "muscle": "Shoulders",
-          "equipment": "Weight Machine",
+          "equipment": "Machine",
           "body_part": "Pull"
         }
       ],
@@ -2425,9 +2425,9 @@
         },
         {
           "id": "SUB_EX052_2",
-          "name": "Seated Super-Bayesian Curl",
-          "muscle": "Biceps",
-          "equipment": "Dumbbell",
+          "name": "Barbell Shrug",
+          "muscle": "Back",
+          "equipment": "Barbell",
           "body_part": "Upper"
         }
       ],
@@ -2459,7 +2459,7 @@
           "id": "SUB_EX053_1",
           "name": "EZ-Bar Curl",
           "muscle": "Biceps",
-          "equipment": "Various",
+          "equipment": "Barbell",
           "body_part": "Pull"
         },
         {
@@ -2498,7 +2498,7 @@
           "id": "SUB_EX054_1",
           "name": "EZ-Bar Preacher Curl",
           "muscle": "Biceps",
-          "equipment": "Various",
+          "equipment": "Barbell",
           "body_part": "Pull"
         },
         {
@@ -2543,7 +2543,7 @@
           "id": "SUB_EX055_1",
           "name": "Machine Chest Press",
           "muscle": "Chest",
-          "equipment": "Weight Machine",
+          "equipment": "Machine",
           "body_part": "Push"
         },
         {
@@ -2766,8 +2766,8 @@
         {
           "id": "SUB_EX060_2",
           "name": "Bench Dip",
-          "muscle": "Triceps",
-          "equipment": "Bodyweight",
+          "muscle": "Chest",
+          "equipment": "Various",
           "body_part": "Push"
         }
       ],
@@ -2799,14 +2799,14 @@
           "id": "SUB_EX061_1",
           "name": "Hanging Leg Raise",
           "muscle": "Abs",
-          "equipment": "Bodyweight",
+          "equipment": "Various",
           "body_part": "Core"
         },
         {
           "id": "SUB_EX061_2",
           "name": "Modified Candlestick",
           "muscle": "Abs",
-          "equipment": "Bodyweight",
+          "equipment": "Various",
           "body_part": "Core"
         }
       ],
@@ -2838,7 +2838,7 @@
           "id": "SUB_EX062_1",
           "name": "Smith Machine Static Lunge",
           "muscle": "Quadriceps",
-          "equipment": "Smith Machine",
+          "equipment": "Machine",
           "body_part": "Legs"
         },
         {
@@ -2960,7 +2960,7 @@
         {
           "id": "SUB_EX065_1",
           "name": "Reverse Nordic",
-          "muscle": "Quadriceps",
+          "muscle": "Hamstrings",
           "equipment": "Various",
           "body_part": "Lower"
         },
@@ -3078,7 +3078,7 @@
           "id": "SUB_EX068_1",
           "name": "Leg Press Calf Press",
           "muscle": "Calves",
-          "equipment": "Various",
+          "equipment": "Machine",
           "body_part": "Lower"
         },
         {
@@ -3145,7 +3145,7 @@
           "id": "SUB_EX069_2",
           "name": "45\u00b0 Incline Machine Press",
           "muscle": "Chest",
-          "equipment": "Weight Machine",
+          "equipment": "Machine",
           "body_part": "Upper"
         }
       ],
@@ -3195,7 +3195,7 @@
           "id": "SUB_EX070_2",
           "name": "Pec Deck",
           "muscle": "Chest",
-          "equipment": "Various",
+          "equipment": "Machine",
           "body_part": "Upper"
         }
       ],
@@ -3334,7 +3334,7 @@
           "id": "SUB_EX073_2",
           "name": "Smith Machine Row",
           "muscle": "Back",
-          "equipment": "Smith Machine",
+          "equipment": "Machine",
           "body_part": "Upper"
         },
         {
@@ -3421,16 +3421,16 @@
       "substitutions": [
         {
           "id": "SUB_EX075_1",
-          "name": "Cable Rope Hammer Curl",
+          "name": "Bayesian Cable Curl",
           "muscle": "Biceps",
           "equipment": "Cable Machine",
           "body_part": "Upper"
         },
         {
           "id": "SUB_EX075_2",
-          "name": "EZ-Bar Cable Curl",
+          "name": "Incline DB Stretch Curl",
           "muscle": "Biceps",
-          "equipment": "Cable Machine",
+          "equipment": "Dumbbell",
           "body_part": "Upper"
         }
       ],
@@ -3584,7 +3584,7 @@
         {
           "id": "SUB_EX079_1",
           "name": "Reverse Nordic",
-          "muscle": "Quadriceps",
+          "muscle": "Hamstrings",
           "equipment": "Various",
           "body_part": "Lower"
         },
@@ -3624,7 +3624,7 @@
           "id": "SUB_EX080_1",
           "name": "Leg Press Calf Press",
           "muscle": "Calves",
-          "equipment": "Various",
+          "equipment": "Machine",
           "body_part": "Lower"
         },
         {
@@ -3682,16 +3682,16 @@
       "substitutions": [
         {
           "id": "SUB_EX081_1",
-          "name": "Decline Weighted Crunch",
+          "name": "Decline Crunch",
           "muscle": "Abs",
           "equipment": "Various",
           "body_part": "Lower"
         },
         {
           "id": "SUB_EX081_2",
-          "name": "Machine Crunch",
+          "name": "Weighted Machine Crunch",
           "muscle": "Abs",
-          "equipment": "Weight Machine",
+          "equipment": "Machine",
           "body_part": "Lower"
         }
       ],
@@ -3723,7 +3723,7 @@
           "id": "SUB_EX082_1",
           "name": "Neutral-Grip Pull-Up",
           "muscle": "Back",
-          "equipment": "Pull-up Bar",
+          "equipment": "Various",
           "body_part": "Pull"
         },
         {
@@ -3760,16 +3760,16 @@
       "substitutions": [
         {
           "id": "SUB_EX083_1",
-          "name": "Incline Chest-Supported DB Row",
+          "name": "Chest-Supported T-Bar Row",
           "muscle": "Back",
-          "equipment": "Dumbbell",
+          "equipment": "Various",
           "body_part": "Pull"
         },
         {
           "id": "SUB_EX083_2",
-          "name": "Chest-Supported T-Bar Row",
+          "name": "Incline Chest-Supported DB Row",
           "muscle": "Back",
-          "equipment": "Various",
+          "equipment": "Dumbbell",
           "body_part": "Pull"
         }
       ],
@@ -3847,7 +3847,7 @@
           "id": "SUB_EX085_2",
           "name": "Reverse Pec Deck",
           "muscle": "Shoulders",
-          "equipment": "Weight Machine",
+          "equipment": "Machine",
           "body_part": "Pull"
         }
       ],
@@ -3884,9 +3884,9 @@
         },
         {
           "id": "SUB_EX086_2",
-          "name": "Seated Super-Bayesian Curl",
-          "muscle": "Biceps",
-          "equipment": "Dumbbell",
+          "name": "Machine Shrug",
+          "muscle": "Back",
+          "equipment": "Machine",
           "body_part": "Upper"
         }
       ],
@@ -3918,7 +3918,7 @@
           "id": "SUB_EX087_1",
           "name": "EZ-Bar Curl",
           "muscle": "Biceps",
-          "equipment": "Various",
+          "equipment": "Barbell",
           "body_part": "Pull"
         },
         {
@@ -3957,7 +3957,7 @@
           "id": "SUB_EX088_1",
           "name": "EZ-Bar Preacher Curl",
           "muscle": "Biceps",
-          "equipment": "Various",
+          "equipment": "Barbell",
           "body_part": "Pull"
         },
         {
@@ -4002,7 +4002,7 @@
           "id": "SUB_EX089_1",
           "name": "Machine Chest Press",
           "muscle": "Chest",
-          "equipment": "Weight Machine",
+          "equipment": "Machine",
           "body_part": "Push"
         },
         {
@@ -4225,8 +4225,8 @@
         {
           "id": "SUB_EX094_2",
           "name": "Bench Dip",
-          "muscle": "Triceps",
-          "equipment": "Bodyweight",
+          "muscle": "Chest",
+          "equipment": "Various",
           "body_part": "Push"
         }
       ],
@@ -4258,14 +4258,14 @@
           "id": "SUB_EX095_1",
           "name": "Hanging Leg Raise",
           "muscle": "Abs",
-          "equipment": "Bodyweight",
+          "equipment": "Various",
           "body_part": "Core"
         },
         {
           "id": "SUB_EX095_2",
           "name": "Modified Candlestick",
           "muscle": "Abs",
-          "equipment": "Bodyweight",
+          "equipment": "Various",
           "body_part": "Core"
         }
       ],
@@ -4297,7 +4297,7 @@
           "id": "SUB_EX096_1",
           "name": "Smith Machine Static Lunge",
           "muscle": "Quadriceps",
-          "equipment": "Smith Machine",
+          "equipment": "Machine",
           "body_part": "Legs"
         },
         {
@@ -4419,7 +4419,7 @@
         {
           "id": "SUB_EX099_1",
           "name": "Reverse Nordic",
-          "muscle": "Quadriceps",
+          "muscle": "Hamstrings",
           "equipment": "Various",
           "body_part": "Lower"
         },
@@ -4537,7 +4537,7 @@
           "id": "SUB_EX102_1",
           "name": "Leg Press Calf Press",
           "muscle": "Calves",
-          "equipment": "Various",
+          "equipment": "Machine",
           "body_part": "Lower"
         },
         {
@@ -4604,7 +4604,7 @@
           "id": "SUB_EX103_2",
           "name": "45\u00b0 Incline Machine Press",
           "muscle": "Chest",
-          "equipment": "Weight Machine",
+          "equipment": "Machine",
           "body_part": "Upper"
         }
       ],
@@ -4654,7 +4654,7 @@
           "id": "SUB_EX104_2",
           "name": "Pec Deck",
           "muscle": "Chest",
-          "equipment": "Various",
+          "equipment": "Machine",
           "body_part": "Upper"
         }
       ],
@@ -4793,7 +4793,7 @@
           "id": "SUB_EX107_2",
           "name": "Smith Machine Row",
           "muscle": "Back",
-          "equipment": "Smith Machine",
+          "equipment": "Machine",
           "body_part": "Upper"
         },
         {
@@ -4880,16 +4880,16 @@
       "substitutions": [
         {
           "id": "SUB_EX109_1",
-          "name": "Cable Rope Hammer Curl",
+          "name": "Bayesian Cable Curl",
           "muscle": "Biceps",
           "equipment": "Cable Machine",
           "body_part": "Upper"
         },
         {
           "id": "SUB_EX109_2",
-          "name": "EZ-Bar Cable Curl",
+          "name": "Incline DB Stretch Curl",
           "muscle": "Biceps",
-          "equipment": "Cable Machine",
+          "equipment": "Dumbbell",
           "body_part": "Upper"
         }
       ],
@@ -5043,7 +5043,7 @@
         {
           "id": "SUB_EX113_1",
           "name": "Reverse Nordic",
-          "muscle": "Quadriceps",
+          "muscle": "Hamstrings",
           "equipment": "Various",
           "body_part": "Lower"
         },
@@ -5083,7 +5083,7 @@
           "id": "SUB_EX114_1",
           "name": "Leg Press Calf Press",
           "muscle": "Calves",
-          "equipment": "Various",
+          "equipment": "Machine",
           "body_part": "Lower"
         },
         {
@@ -5141,16 +5141,16 @@
       "substitutions": [
         {
           "id": "SUB_EX115_1",
-          "name": "Decline Weighted Crunch",
+          "name": "Decline Crunch",
           "muscle": "Abs",
           "equipment": "Various",
           "body_part": "Lower"
         },
         {
           "id": "SUB_EX115_2",
-          "name": "Machine Crunch",
+          "name": "Weighted Machine Crunch",
           "muscle": "Abs",
-          "equipment": "Weight Machine",
+          "equipment": "Machine",
           "body_part": "Lower"
         }
       ],
@@ -5182,7 +5182,7 @@
           "id": "SUB_EX116_1",
           "name": "Neutral-Grip Pull-Up",
           "muscle": "Back",
-          "equipment": "Pull-up Bar",
+          "equipment": "Various",
           "body_part": "Pull"
         },
         {
@@ -5219,16 +5219,16 @@
       "substitutions": [
         {
           "id": "SUB_EX117_1",
-          "name": "Incline Chest-Supported DB Row",
+          "name": "Chest-Supported T-Bar Row",
           "muscle": "Back",
-          "equipment": "Dumbbell",
+          "equipment": "Various",
           "body_part": "Pull"
         },
         {
           "id": "SUB_EX117_2",
-          "name": "Chest-Supported T-Bar Row",
+          "name": "Incline Chest-Supported DB Row",
           "muscle": "Back",
-          "equipment": "Various",
+          "equipment": "Dumbbell",
           "body_part": "Pull"
         }
       ],
@@ -5306,7 +5306,7 @@
           "id": "SUB_EX119_2",
           "name": "Reverse Pec Deck",
           "muscle": "Shoulders",
-          "equipment": "Weight Machine",
+          "equipment": "Machine",
           "body_part": "Pull"
         }
       ],
@@ -5343,9 +5343,9 @@
         },
         {
           "id": "SUB_EX120_2",
-          "name": "Seated Super-Bayesian Curl",
-          "muscle": "Biceps",
-          "equipment": "Dumbbell",
+          "name": "Cable Shrug",
+          "muscle": "Back",
+          "equipment": "Cable Machine",
           "body_part": "Upper"
         }
       ],
@@ -5377,7 +5377,7 @@
           "id": "SUB_EX121_1",
           "name": "EZ-Bar Curl",
           "muscle": "Biceps",
-          "equipment": "Various",
+          "equipment": "Barbell",
           "body_part": "Pull"
         },
         {
@@ -5416,7 +5416,7 @@
           "id": "SUB_EX122_1",
           "name": "EZ-Bar Preacher Curl",
           "muscle": "Biceps",
-          "equipment": "Various",
+          "equipment": "Barbell",
           "body_part": "Pull"
         },
         {
@@ -5461,7 +5461,7 @@
           "id": "SUB_EX123_1",
           "name": "Machine Chest Press",
           "muscle": "Chest",
-          "equipment": "Weight Machine",
+          "equipment": "Machine",
           "body_part": "Push"
         },
         {
@@ -5684,8 +5684,8 @@
         {
           "id": "SUB_EX128_2",
           "name": "Bench Dip",
-          "muscle": "Triceps",
-          "equipment": "Bodyweight",
+          "muscle": "Chest",
+          "equipment": "Various",
           "body_part": "Push"
         }
       ],
@@ -5717,14 +5717,14 @@
           "id": "SUB_EX129_1",
           "name": "Hanging Leg Raise",
           "muscle": "Abs",
-          "equipment": "Bodyweight",
+          "equipment": "Various",
           "body_part": "Core"
         },
         {
           "id": "SUB_EX129_2",
           "name": "Modified Candlestick",
           "muscle": "Abs",
-          "equipment": "Bodyweight",
+          "equipment": "Various",
           "body_part": "Core"
         }
       ],
@@ -5756,7 +5756,7 @@
           "id": "SUB_EX130_1",
           "name": "Smith Machine Static Lunge",
           "muscle": "Quadriceps",
-          "equipment": "Smith Machine",
+          "equipment": "Machine",
           "body_part": "Legs"
         },
         {
@@ -5878,7 +5878,7 @@
         {
           "id": "SUB_EX133_1",
           "name": "Reverse Nordic",
-          "muscle": "Quadriceps",
+          "muscle": "Hamstrings",
           "equipment": "Various",
           "body_part": "Lower"
         },
@@ -5996,7 +5996,7 @@
           "id": "SUB_EX136_1",
           "name": "Leg Press Calf Press",
           "muscle": "Calves",
-          "equipment": "Various",
+          "equipment": "Machine",
           "body_part": "Lower"
         },
         {
@@ -6063,7 +6063,7 @@
           "id": "SUB_EX137_2",
           "name": "45\u00b0 Incline Machine Press",
           "muscle": "Chest",
-          "equipment": "Weight Machine",
+          "equipment": "Machine",
           "body_part": "Upper"
         }
       ],
@@ -6113,7 +6113,7 @@
           "id": "SUB_EX138_2",
           "name": "Pec Deck",
           "muscle": "Chest",
-          "equipment": "Various",
+          "equipment": "Machine",
           "body_part": "Upper"
         }
       ],
@@ -6257,7 +6257,7 @@
           "id": "SUB_EX141_2",
           "name": "Smith Machine Row",
           "muscle": "Back",
-          "equipment": "Smith Machine",
+          "equipment": "Machine",
           "body_part": "Upper"
         },
         {
@@ -6344,16 +6344,16 @@
       "substitutions": [
         {
           "id": "SUB_EX143_1",
-          "name": "Cable Rope Hammer Curl",
+          "name": "Bayesian Cable Curl",
           "muscle": "Biceps",
           "equipment": "Cable Machine",
           "body_part": "Upper"
         },
         {
           "id": "SUB_EX143_2",
-          "name": "EZ-Bar Cable Curl",
+          "name": "Incline DB Stretch Curl",
           "muscle": "Biceps",
-          "equipment": "Cable Machine",
+          "equipment": "Dumbbell",
           "body_part": "Upper"
         }
       ],
@@ -6507,7 +6507,7 @@
         {
           "id": "SUB_EX147_1",
           "name": "Reverse Nordic",
-          "muscle": "Quadriceps",
+          "muscle": "Hamstrings",
           "equipment": "Various",
           "body_part": "Lower"
         },
@@ -6547,7 +6547,7 @@
           "id": "SUB_EX148_1",
           "name": "Leg Press Calf Press",
           "muscle": "Calves",
-          "equipment": "Various",
+          "equipment": "Machine",
           "body_part": "Lower"
         },
         {
@@ -6605,16 +6605,16 @@
       "substitutions": [
         {
           "id": "SUB_EX149_1",
-          "name": "Decline Weighted Crunch",
+          "name": "Decline Crunch",
           "muscle": "Abs",
           "equipment": "Various",
           "body_part": "Lower"
         },
         {
           "id": "SUB_EX149_2",
-          "name": "Machine Crunch",
+          "name": "Weighted Machine Crunch",
           "muscle": "Abs",
-          "equipment": "Weight Machine",
+          "equipment": "Machine",
           "body_part": "Lower"
         }
       ],
@@ -6646,7 +6646,7 @@
           "id": "SUB_EX150_1",
           "name": "Neutral-Grip Pull-Up",
           "muscle": "Back",
-          "equipment": "Pull-up Bar",
+          "equipment": "Various",
           "body_part": "Pull"
         },
         {
@@ -6683,16 +6683,16 @@
       "substitutions": [
         {
           "id": "SUB_EX151_1",
-          "name": "Incline Chest-Supported DB Row",
+          "name": "Chest-Supported T-Bar Row",
           "muscle": "Back",
-          "equipment": "Dumbbell",
+          "equipment": "Various",
           "body_part": "Pull"
         },
         {
           "id": "SUB_EX151_2",
-          "name": "Chest-Supported T-Bar Row",
+          "name": "Incline Chest-Supported DB Row",
           "muscle": "Back",
-          "equipment": "Various",
+          "equipment": "Dumbbell",
           "body_part": "Pull"
         }
       ],
@@ -6770,7 +6770,7 @@
           "id": "SUB_EX153_2",
           "name": "Reverse Pec Deck",
           "muscle": "Shoulders",
-          "equipment": "Weight Machine",
+          "equipment": "Machine",
           "body_part": "Pull"
         }
       ],
@@ -6807,9 +6807,9 @@
         },
         {
           "id": "SUB_EX154_2",
-          "name": "Seated Super-Bayesian Curl",
-          "muscle": "Biceps",
-          "equipment": "Dumbbell",
+          "name": "Trap Bar Shrug",
+          "muscle": "Back",
+          "equipment": "Barbell",
           "body_part": "Upper"
         }
       ],
@@ -6841,7 +6841,7 @@
           "id": "SUB_EX155_1",
           "name": "EZ-Bar Curl",
           "muscle": "Biceps",
-          "equipment": "Various",
+          "equipment": "Barbell",
           "body_part": "Pull"
         },
         {
@@ -6880,7 +6880,7 @@
           "id": "SUB_EX156_1",
           "name": "EZ-Bar Preacher Curl",
           "muscle": "Biceps",
-          "equipment": "Various",
+          "equipment": "Barbell",
           "body_part": "Pull"
         },
         {
@@ -6925,7 +6925,7 @@
           "id": "SUB_EX157_1",
           "name": "Machine Chest Press",
           "muscle": "Chest",
-          "equipment": "Weight Machine",
+          "equipment": "Machine",
           "body_part": "Push"
         },
         {
@@ -7148,8 +7148,8 @@
         {
           "id": "SUB_EX162_2",
           "name": "Bench Dip",
-          "muscle": "Triceps",
-          "equipment": "Bodyweight",
+          "muscle": "Chest",
+          "equipment": "Various",
           "body_part": "Push"
         }
       ],
@@ -7181,14 +7181,14 @@
           "id": "SUB_EX163_1",
           "name": "Hanging Leg Raise",
           "muscle": "Abs",
-          "equipment": "Bodyweight",
+          "equipment": "Various",
           "body_part": "Core"
         },
         {
           "id": "SUB_EX163_2",
           "name": "Modified Candlestick",
           "muscle": "Abs",
-          "equipment": "Bodyweight",
+          "equipment": "Various",
           "body_part": "Core"
         }
       ],
@@ -7220,7 +7220,7 @@
           "id": "SUB_EX164_1",
           "name": "Smith Machine Static Lunge",
           "muscle": "Quadriceps",
-          "equipment": "Smith Machine",
+          "equipment": "Machine",
           "body_part": "Legs"
         },
         {
@@ -7342,7 +7342,7 @@
         {
           "id": "SUB_EX167_1",
           "name": "Reverse Nordic",
-          "muscle": "Quadriceps",
+          "muscle": "Hamstrings",
           "equipment": "Various",
           "body_part": "Legs"
         },
@@ -7460,7 +7460,7 @@
           "id": "SUB_EX170_1",
           "name": "Leg Press Calf Press",
           "muscle": "Calves",
-          "equipment": "Various",
+          "equipment": "Machine",
           "body_part": "Legs"
         },
         {
@@ -7557,16 +7557,16 @@
       "substitutions": [
         {
           "id": "SUB_EX172_1",
-          "name": "Pendlay Row",
-          "muscle": "Back",
-          "equipment": "Barbell",
+          "name": "Bottom-Half DB Flye",
+          "muscle": "Chest",
+          "equipment": "Dumbbell",
           "body_part": "Upper"
         },
         {
           "id": "SUB_EX172_2",
-          "name": "Overhead Cable Triceps Extension (Bar)",
-          "muscle": "Triceps",
-          "equipment": "Cable Machine",
+          "name": "Pec Deck",
+          "muscle": "Chest",
+          "equipment": "Machine",
           "body_part": "Upper"
         }
       ],
@@ -7776,16 +7776,16 @@
       "substitutions": [
         {
           "id": "SUB_EX177_1",
-          "name": "Cable Rope Hammer Curl",
+          "name": "Bayesian Cable Curl",
           "muscle": "Biceps",
           "equipment": "Cable Machine",
           "body_part": "Upper"
         },
         {
           "id": "SUB_EX177_2",
-          "name": "EZ-Bar Cable Curl",
+          "name": "Incline DB Stretch Curl",
           "muscle": "Biceps",
-          "equipment": "Cable Machine",
+          "equipment": "Dumbbell",
           "body_part": "Upper"
         }
       ],
@@ -8174,7 +8174,7 @@
           "id": "SUB_EX187_2",
           "name": "Reverse Pec Deck",
           "muscle": "Shoulders",
-          "equipment": "Weight Machine",
+          "equipment": "Machine",
           "body_part": "Pull"
         }
       ],
@@ -8712,7 +8712,7 @@
         {
           "id": "SUB_EX201_1",
           "name": "Reverse Nordic",
-          "muscle": "Quadriceps",
+          "muscle": "Hamstrings",
           "equipment": "Various",
           "body_part": "Legs"
         },
@@ -8830,7 +8830,7 @@
           "id": "SUB_EX204_1",
           "name": "Leg Press Calf Press",
           "muscle": "Calves",
-          "equipment": "Various",
+          "equipment": "Machine",
           "body_part": "Legs"
         },
         {
@@ -8922,16 +8922,16 @@
       "substitutions": [
         {
           "id": "SUB_EX206_1",
-          "name": "Pendlay Row",
-          "muscle": "Back",
-          "equipment": "Barbell",
+          "name": "Bottom-Half DB Flye",
+          "muscle": "Chest",
+          "equipment": "Dumbbell",
           "body_part": "Upper"
         },
         {
           "id": "SUB_EX206_2",
-          "name": "Overhead Cable Triceps Extension (Bar)",
-          "muscle": "Triceps",
-          "equipment": "Cable Machine",
+          "name": "Pec Deck",
+          "muscle": "Chest",
+          "equipment": "Machine",
           "body_part": "Upper"
         }
       ],
@@ -9141,16 +9141,16 @@
       "substitutions": [
         {
           "id": "SUB_EX211_1",
-          "name": "Cable Rope Hammer Curl",
+          "name": "Bayesian Cable Curl",
           "muscle": "Biceps",
           "equipment": "Cable Machine",
           "body_part": "Upper"
         },
         {
           "id": "SUB_EX211_2",
-          "name": "EZ-Bar Cable Curl",
+          "name": "Incline DB Stretch Curl",
           "muscle": "Biceps",
-          "equipment": "Cable Machine",
+          "equipment": "Dumbbell",
           "body_part": "Upper"
         }
       ],
@@ -9539,7 +9539,7 @@
           "id": "SUB_EX221_2",
           "name": "Reverse Pec Deck",
           "muscle": "Shoulders",
-          "equipment": "Weight Machine",
+          "equipment": "Machine",
           "body_part": "Pull"
         }
       ],
@@ -10077,7 +10077,7 @@
         {
           "id": "SUB_EX235_1",
           "name": "Reverse Nordic",
-          "muscle": "Quadriceps",
+          "muscle": "Hamstrings",
           "equipment": "Various",
           "body_part": "Legs"
         },
@@ -10195,7 +10195,7 @@
           "id": "SUB_EX238_1",
           "name": "Leg Press Calf Press",
           "muscle": "Calves",
-          "equipment": "Various",
+          "equipment": "Machine",
           "body_part": "Legs"
         },
         {
@@ -10287,16 +10287,16 @@
       "substitutions": [
         {
           "id": "SUB_EX240_1",
-          "name": "Pendlay Row",
-          "muscle": "Back",
-          "equipment": "Barbell",
+          "name": "Bottom-Half DB Flye",
+          "muscle": "Chest",
+          "equipment": "Dumbbell",
           "body_part": "Upper"
         },
         {
           "id": "SUB_EX240_2",
-          "name": "Overhead Cable Triceps Extension (Bar)",
-          "muscle": "Triceps",
-          "equipment": "Cable Machine",
+          "name": "Pec Deck",
+          "muscle": "Chest",
+          "equipment": "Machine",
           "body_part": "Upper"
         }
       ],
@@ -10506,16 +10506,16 @@
       "substitutions": [
         {
           "id": "SUB_EX245_1",
-          "name": "Cable Rope Hammer Curl",
+          "name": "Bayesian Cable Curl",
           "muscle": "Biceps",
           "equipment": "Cable Machine",
           "body_part": "Upper"
         },
         {
           "id": "SUB_EX245_2",
-          "name": "EZ-Bar Cable Curl",
+          "name": "Incline DB Stretch Curl",
           "muscle": "Biceps",
-          "equipment": "Cable Machine",
+          "equipment": "Dumbbell",
           "body_part": "Upper"
         }
       ],
@@ -10904,7 +10904,7 @@
           "id": "SUB_EX255_2",
           "name": "Reverse Pec Deck",
           "muscle": "Shoulders",
-          "equipment": "Weight Machine",
+          "equipment": "Machine",
           "body_part": "Pull"
         }
       ],
@@ -11442,7 +11442,7 @@
         {
           "id": "SUB_EX269_1",
           "name": "Reverse Nordic",
-          "muscle": "Quadriceps",
+          "muscle": "Hamstrings",
           "equipment": "Various",
           "body_part": "Legs"
         },
@@ -11560,7 +11560,7 @@
           "id": "SUB_EX272_1",
           "name": "Leg Press Calf Press",
           "muscle": "Calves",
-          "equipment": "Various",
+          "equipment": "Machine",
           "body_part": "Legs"
         },
         {
@@ -11652,16 +11652,16 @@
       "substitutions": [
         {
           "id": "SUB_EX274_1",
-          "name": "Pendlay Row",
-          "muscle": "Back",
-          "equipment": "Barbell",
+          "name": "Bottom-Half DB Flye",
+          "muscle": "Chest",
+          "equipment": "Dumbbell",
           "body_part": "Upper"
         },
         {
           "id": "SUB_EX274_2",
-          "name": "Overhead Cable Triceps Extension (Bar)",
-          "muscle": "Triceps",
-          "equipment": "Cable Machine",
+          "name": "Pec Deck",
+          "muscle": "Chest",
+          "equipment": "Machine",
           "body_part": "Upper"
         }
       ],
@@ -11871,16 +11871,16 @@
       "substitutions": [
         {
           "id": "SUB_EX279_1",
-          "name": "Cable Rope Hammer Curl",
+          "name": "Bayesian Cable Curl",
           "muscle": "Biceps",
           "equipment": "Cable Machine",
           "body_part": "Upper"
         },
         {
           "id": "SUB_EX279_2",
-          "name": "EZ-Bar Cable Curl",
+          "name": "Incline DB Stretch Curl",
           "muscle": "Biceps",
-          "equipment": "Cable Machine",
+          "equipment": "Dumbbell",
           "body_part": "Upper"
         }
       ],
@@ -12269,7 +12269,7 @@
           "id": "SUB_EX289_2",
           "name": "Reverse Pec Deck",
           "muscle": "Shoulders",
-          "equipment": "Weight Machine",
+          "equipment": "Machine",
           "body_part": "Pull"
         }
       ],
@@ -12807,7 +12807,7 @@
         {
           "id": "SUB_EX303_1",
           "name": "Reverse Nordic",
-          "muscle": "Quadriceps",
+          "muscle": "Hamstrings",
           "equipment": "Various",
           "body_part": "Lower"
         },
@@ -12925,7 +12925,7 @@
           "id": "SUB_EX306_1",
           "name": "Leg Press Calf Press",
           "muscle": "Calves",
-          "equipment": "Various",
+          "equipment": "Machine",
           "body_part": "Lower"
         },
         {
@@ -13022,16 +13022,16 @@
       "substitutions": [
         {
           "id": "SUB_EX308_1",
-          "name": "Pendlay Row",
-          "muscle": "Back",
-          "equipment": "Barbell",
+          "name": "Bottom-Half DB Flye",
+          "muscle": "Chest",
+          "equipment": "Dumbbell",
           "body_part": "Upper"
         },
         {
           "id": "SUB_EX308_2",
-          "name": "Overhead Cable Triceps Extension (Bar)",
-          "muscle": "Triceps",
-          "equipment": "Cable Machine",
+          "name": "Pec Deck",
+          "muscle": "Chest",
+          "equipment": "Machine",
           "body_part": "Upper"
         }
       ],
@@ -13241,16 +13241,16 @@
       "substitutions": [
         {
           "id": "SUB_EX313_1",
-          "name": "Cable Rope Hammer Curl",
+          "name": "Bayesian Cable Curl",
           "muscle": "Biceps",
           "equipment": "Cable Machine",
           "body_part": "Upper"
         },
         {
           "id": "SUB_EX313_2",
-          "name": "EZ-Bar Cable Curl",
+          "name": "Incline DB Stretch Curl",
           "muscle": "Biceps",
-          "equipment": "Cable Machine",
+          "equipment": "Dumbbell",
           "body_part": "Upper"
         }
       ],
@@ -13639,7 +13639,7 @@
           "id": "SUB_EX323_2",
           "name": "Reverse Pec Deck",
           "muscle": "Shoulders",
-          "equipment": "Weight Machine",
+          "equipment": "Machine",
           "body_part": "Pull"
         }
       ],
@@ -14177,7 +14177,7 @@
         {
           "id": "SUB_EX337_1",
           "name": "Reverse Nordic",
-          "muscle": "Quadriceps",
+          "muscle": "Hamstrings",
           "equipment": "Various",
           "body_part": "Lower"
         },
@@ -14295,7 +14295,7 @@
           "id": "SUB_EX340_1",
           "name": "Leg Press Calf Press",
           "muscle": "Calves",
-          "equipment": "Various",
+          "equipment": "Machine",
           "body_part": "Lower"
         },
         {
@@ -14392,16 +14392,16 @@
       "substitutions": [
         {
           "id": "SUB_EX342_1",
-          "name": "Pendlay Row",
-          "muscle": "Back",
-          "equipment": "Barbell",
+          "name": "Bottom-Half DB Flye",
+          "muscle": "Chest",
+          "equipment": "Dumbbell",
           "body_part": "Upper"
         },
         {
           "id": "SUB_EX342_2",
-          "name": "Overhead Cable Triceps Extension (Bar)",
-          "muscle": "Triceps",
-          "equipment": "Cable Machine",
+          "name": "Pec Deck",
+          "muscle": "Chest",
+          "equipment": "Machine",
           "body_part": "Upper"
         }
       ],
@@ -14611,16 +14611,16 @@
       "substitutions": [
         {
           "id": "SUB_EX347_1",
-          "name": "Cable Rope Hammer Curl",
+          "name": "Bayesian Cable Curl",
           "muscle": "Biceps",
           "equipment": "Cable Machine",
           "body_part": "Upper"
         },
         {
           "id": "SUB_EX347_2",
-          "name": "EZ-Bar Cable Curl",
+          "name": "Incline DB Stretch Curl",
           "muscle": "Biceps",
-          "equipment": "Cable Machine",
+          "equipment": "Dumbbell",
           "body_part": "Upper"
         }
       ],
@@ -15009,7 +15009,7 @@
           "id": "SUB_EX357_2",
           "name": "Reverse Pec Deck",
           "muscle": "Shoulders",
-          "equipment": "Weight Machine",
+          "equipment": "Machine",
           "body_part": "Pull"
         }
       ],
@@ -15547,7 +15547,7 @@
         {
           "id": "SUB_EX371_1",
           "name": "Reverse Nordic",
-          "muscle": "Quadriceps",
+          "muscle": "Hamstrings",
           "equipment": "Various",
           "body_part": "Lower"
         },
@@ -15665,7 +15665,7 @@
           "id": "SUB_EX374_1",
           "name": "Leg Press Calf Press",
           "muscle": "Calves",
-          "equipment": "Various",
+          "equipment": "Machine",
           "body_part": "Lower"
         },
         {
@@ -15970,16 +15970,16 @@
       "substitutions": [
         {
           "id": "SUB_EX381_1",
-          "name": "Cable Rope Hammer Curl",
+          "name": "Bayesian Cable Curl",
           "muscle": "Biceps",
           "equipment": "Cable Machine",
           "body_part": "Upper"
         },
         {
           "id": "SUB_EX381_2",
-          "name": "EZ-Bar Cable Curl",
+          "name": "Incline DB Stretch Curl",
           "muscle": "Biceps",
-          "equipment": "Cable Machine",
+          "equipment": "Dumbbell",
           "body_part": "Upper"
         }
       ],
@@ -16368,7 +16368,7 @@
           "id": "SUB_EX391_2",
           "name": "Reverse Pec Deck",
           "muscle": "Shoulders",
-          "equipment": "Weight Machine",
+          "equipment": "Machine",
           "body_part": "Pull"
         }
       ],
@@ -16906,7 +16906,7 @@
         {
           "id": "SUB_EX405_1",
           "name": "Reverse Nordic",
-          "muscle": "Quadriceps",
+          "muscle": "Hamstrings",
           "equipment": "Various",
           "body_part": "Lower"
         },
@@ -17024,7 +17024,7 @@
           "id": "SUB_EX408_1",
           "name": "Leg Press Calf Press",
           "muscle": "Calves",
-          "equipment": "Various",
+          "equipment": "Machine",
           "body_part": "Lower"
         },
         {
