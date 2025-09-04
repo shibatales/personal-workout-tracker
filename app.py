@@ -1941,6 +1941,19 @@ HTML_TEMPLATE = r'''
                 console.error('❌ Error loading workout data:', error);
                 workoutData = {};
             }
+            
+            // Also load cached exercise data for offline use
+            try {
+                const cachedData = localStorage.getItem('cachedWorkoutData');
+                if (cachedData) {
+                    cachedWorkoutData = JSON.parse(cachedData);
+                    console.log('✅ Cached workout data loaded from localStorage:', cachedWorkoutData.length, 'exercises');
+                } else {
+                    console.log('ℹ️ No cached workout data found');
+                }
+            } catch (error) {
+                console.error('❌ Error loading cached workout data:', error);
+            }
         }
 
         // Save workout data to localStorage
@@ -3368,6 +3381,14 @@ HTML_TEMPLATE = r'''
                 if (response.ok) {
                     cachedWorkoutData = await response.json();
                     console.log(`✅ Cached ${cachedWorkoutData.length} exercises for offline use`);
+                    
+                    // Save to localStorage for offline access
+                    try {
+                        localStorage.setItem('cachedWorkoutData', JSON.stringify(cachedWorkoutData));
+                        console.log('✅ Cached workout data saved to localStorage');
+                    } catch (error) {
+                        console.error('❌ Error saving cached workout data:', error);
+                    }
                 }
                 
                 // Cache all week/workout type combinations
