@@ -7876,8 +7876,8 @@
       "body_part_id": 2,
       "training_focus": "Strength Focus",
       "training_focus_id": 1,
-      "muscle": "Back",
-      "muscle_id": 2,
+      "muscle": "Hamstrings",
+      "muscle_id": 8,
       "equipment": "Cable Machine",
       "equipment_id": 3,
       "reps": "6-8",
@@ -7892,14 +7892,14 @@
         {
           "id": "SUB_EX180_1",
           "name": "Hyperextension",
-          "muscle": "Back",
+          "muscle": "Hamstrings",
           "equipment": "Various",
           "body_part": "Lower"
         },
         {
           "id": "SUB_EX180_2",
           "name": "Glute-Ham Raise",
-          "muscle": "Back",
+          "muscle": "Hamstrings",
           "equipment": "Various",
           "body_part": "Lower"
         }
@@ -9241,8 +9241,8 @@
       "body_part_id": 2,
       "training_focus": "Strength Focus",
       "training_focus_id": 1,
-      "muscle": "Back",
-      "muscle_id": 2,
+      "muscle": "Hamstrings",
+      "muscle_id": 8,
       "equipment": "Cable Machine",
       "equipment_id": 3,
       "reps": "6-8",
@@ -9257,14 +9257,14 @@
         {
           "id": "SUB_EX214_1",
           "name": "Hyperextension",
-          "muscle": "Back",
+          "muscle": "Hamstrings",
           "equipment": "Various",
           "body_part": "Lower"
         },
         {
           "id": "SUB_EX214_2",
           "name": "Glute-Ham Raise",
-          "muscle": "Back",
+          "muscle": "Hamstrings",
           "equipment": "Various",
           "body_part": "Lower"
         }
@@ -10606,8 +10606,8 @@
       "body_part_id": 2,
       "training_focus": "Strength Focus",
       "training_focus_id": 1,
-      "muscle": "Back",
-      "muscle_id": 2,
+      "muscle": "Hamstrings",
+      "muscle_id": 8,
       "equipment": "Cable Machine",
       "equipment_id": 3,
       "reps": "6-8",
@@ -10622,14 +10622,14 @@
         {
           "id": "SUB_EX248_1",
           "name": "Hyperextension",
-          "muscle": "Back",
+          "muscle": "Hamstrings",
           "equipment": "Various",
           "body_part": "Lower"
         },
         {
           "id": "SUB_EX248_2",
           "name": "Glute-Ham Raise",
-          "muscle": "Back",
+          "muscle": "Hamstrings",
           "equipment": "Various",
           "body_part": "Lower"
         }
@@ -11971,8 +11971,8 @@
       "body_part_id": 2,
       "training_focus": "Strength Focus",
       "training_focus_id": 1,
-      "muscle": "Back",
-      "muscle_id": 2,
+      "muscle": "Hamstrings",
+      "muscle_id": 8,
       "equipment": "Cable Machine",
       "equipment_id": 3,
       "reps": "6-8",
@@ -11987,14 +11987,14 @@
         {
           "id": "SUB_EX282_1",
           "name": "Hyperextension",
-          "muscle": "Back",
+          "muscle": "Hamstrings",
           "equipment": "Various",
           "body_part": "Lower"
         },
         {
           "id": "SUB_EX282_2",
           "name": "Glute-Ham Raise",
-          "muscle": "Back",
+          "muscle": "Hamstrings",
           "equipment": "Various",
           "body_part": "Lower"
         }
@@ -13341,8 +13341,8 @@
       "body_part_id": 2,
       "training_focus": "Strength Focus",
       "training_focus_id": 1,
-      "muscle": "Back",
-      "muscle_id": 2,
+      "muscle": "Hamstrings",
+      "muscle_id": 8,
       "equipment": "Cable Machine",
       "equipment_id": 3,
       "reps": "6-8",
@@ -13357,14 +13357,14 @@
         {
           "id": "SUB_EX316_1",
           "name": "Hyperextension",
-          "muscle": "Back",
+          "muscle": "Hamstrings",
           "equipment": "Various",
           "body_part": "Lower"
         },
         {
           "id": "SUB_EX316_2",
           "name": "Glute-Ham Raise",
-          "muscle": "Back",
+          "muscle": "Hamstrings",
           "equipment": "Various",
           "body_part": "Lower"
         }
@@ -14711,8 +14711,8 @@
       "body_part_id": 2,
       "training_focus": "Strength Focus",
       "training_focus_id": 1,
-      "muscle": "Back",
-      "muscle_id": 2,
+      "muscle": "Hamstrings",
+      "muscle_id": 8,
       "equipment": "Cable Machine",
       "equipment_id": 3,
       "reps": "6-8",
@@ -14727,14 +14727,14 @@
         {
           "id": "SUB_EX350_1",
           "name": "Hyperextension",
-          "muscle": "Back",
+          "muscle": "Hamstrings",
           "equipment": "Various",
           "body_part": "Lower"
         },
         {
           "id": "SUB_EX350_2",
           "name": "Glute-Ham Raise",
-          "muscle": "Back",
+          "muscle": "Hamstrings",
           "equipment": "Various",
           "body_part": "Lower"
         }
@@ -16070,8 +16070,8 @@
       "body_part_id": 2,
       "training_focus": "Strength Focus",
       "training_focus_id": 1,
-      "muscle": "Back",
-      "muscle_id": 2,
+      "muscle": "Hamstrings",
+      "muscle_id": 8,
       "equipment": "Cable Machine",
       "equipment_id": 3,
       "reps": "6-8",
@@ -16086,14 +16086,14 @@
         {
           "id": "SUB_EX384_1",
           "name": "Hyperextension",
-          "muscle": "Back",
+          "muscle": "Hamstrings",
           "equipment": "Various",
           "body_part": "Lower"
         },
         {
           "id": "SUB_EX384_2",
           "name": "Glute-Ham Raise",
-          "muscle": "Back",
+          "muscle": "Hamstrings",
           "equipment": "Various",
           "body_part": "Lower"
         }
