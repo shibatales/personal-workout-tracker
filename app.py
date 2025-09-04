@@ -754,11 +754,23 @@ HTML_TEMPLATE = r'''
             cursor: pointer;
         }
         
+        .expand-icon {
+            font-size: 1.2rem;
+            color: #4a5568;
+            transition: transform 0.3s ease;
+            margin-left: auto;
+            flex-shrink: 0;
+        }
+        
+        .exercise-card:not(.collapsed) .expand-icon {
+            transform: rotate(180deg);
+        }
+        
         .exercise-title {
             font-size: 1.25rem;
             font-weight: 600;
             color: #2d3748;
-            margin: 0 0 .5rem 0;
+            margin: 0;
             flex: 1;
             min-width: 200px;
         }
@@ -793,7 +805,7 @@ HTML_TEMPLATE = r'''
             display: flex;
             gap: 0.75rem;
             flex-wrap: wrap;
-            margin: 0 0 1rem;
+            margin: 1rem 0;
         }
         
         .original-badge {
@@ -1770,9 +1782,7 @@ HTML_TEMPLATE = r'''
             }
             
             .exercise-title {
-                font-size: 0.9rem !important;
                 line-height: 1.1 !important;
-                font-weight: 600 !important;
             }
             
             .expand-icon {
@@ -2396,6 +2406,15 @@ HTML_TEMPLATE = r'''
                     content.style.visibility = 'visible';
                     content.style.height = 'auto';
                     content.style.overflow = 'visible';
+                    
+                    // Smooth scroll to the top of the active card
+                    setTimeout(() => {
+                        card.scrollIntoView({ 
+                            behavior: 'smooth', 
+                            block: 'start',
+                            inline: 'nearest'
+                        });
+                    }, 100); // Small delay to ensure content is rendered
                     
                     // Save the open card index
                     const cardIndex = Array.from(cards).indexOf(card);
