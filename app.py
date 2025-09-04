@@ -2730,18 +2730,6 @@ HTML_TEMPLATE = r'''
             
             modal.classList.add('active');
         }
-                            </button>
-                        </div>
-                    `;
-                    
-                    list.innerHTML = html;
-                }
-                
-                modal.classList.add('active');
-            } catch (error) {
-                console.error('Error loading substitutions:', error);
-            }
-        }
 
         // Get original exercise data
         async function getOriginalExercise(exerciseId) {
