@@ -1307,8 +1307,8 @@
         {
           "id": "SUB_EX026_2",
           "name": "Bench Dip",
-          "muscle": "Chest",
-          "equipment": "Various",
+          "muscle": "Triceps",
+          "equipment": "Bodyweight",
           "body_part": "Push"
         }
       ],
@@ -2766,8 +2766,8 @@
         {
           "id": "SUB_EX060_2",
           "name": "Bench Dip",
-          "muscle": "Chest",
-          "equipment": "Various",
+          "muscle": "Triceps",
+          "equipment": "Bodyweight",
           "body_part": "Push"
         }
       ],
@@ -4225,8 +4225,8 @@
         {
           "id": "SUB_EX094_2",
           "name": "Bench Dip",
-          "muscle": "Chest",
-          "equipment": "Various",
+          "muscle": "Triceps",
+          "equipment": "Bodyweight",
           "body_part": "Push"
         }
       ],
@@ -5684,8 +5684,8 @@
         {
           "id": "SUB_EX128_2",
           "name": "Bench Dip",
-          "muscle": "Chest",
-          "equipment": "Various",
+          "muscle": "Triceps",
+          "equipment": "Bodyweight",
           "body_part": "Push"
         }
       ],
@@ -7148,8 +7148,8 @@
         {
           "id": "SUB_EX162_2",
           "name": "Bench Dip",
-          "muscle": "Chest",
-          "equipment": "Various",
+          "muscle": "Triceps",
+          "equipment": "Bodyweight",
           "body_part": "Push"
         }
       ],
